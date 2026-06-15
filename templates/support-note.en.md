@@ -2,15 +2,18 @@
 id: <type>.<short-name>
 type: [<type>]
 status: <status>
+scope: <scope>
 related:
   - <optional-related-artifact-id>
 ---
 
 <!--
 
-types: same as document-types, but also: concept, assumption, risk, open question, feedback, implementation, scope, improvement, building, proposal.
+Types: same as document-types, but also: concept, assumption, risk, open question, feedback, implementation, scope, improvement, building, proposal.
 
 Status: draft, active, resolved, superseded, or archived.
+
+Scope: project, iteration, stage
 
 -->
 
