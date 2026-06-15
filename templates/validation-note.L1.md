@@ -4,37 +4,21 @@ type: validation-note
 status: draft
 related:
   - <optional-related-artifact-id>
+target-type: <target-type>
+artifact: <route-to-artifact>
+method: <method>
 ---
 
-# <Validation note title>
-
-## Validation target
-
 <!--
-What was being validated?
-An assumption, use case, process, capability, decision, implementation, document, prototype, or behavior.
+
+Status: draft, active, resolved, superseded, or archived.
+Target type: capability, context, decision, domain-vocabulary, process, use-case
+Method: domain expert review, implementation feedback, user feedback, prototype, test, production observation, operational review, project story
+
 -->
 
-## Related artifact
 
-<!--
-Which document, decision, behavior, implementation, or note does this validation affect?
--->
-
-## Validation method
-
-<!--
-How was it validated?
-Examples:
-- domain expert review
-- implementation feedback
-- user feedback
-- prototype
-- test
-- production observation
-- operational review
-- project story
--->
+# <title>
 
 ## Evidence
 
@@ -89,10 +73,4 @@ What risks became visible because of this validation?
 
 <!--
 What should happen next?
--->
-
-## Related artifacts
-
-<!--
-Support notes, decisions, use cases, capabilities, contexts, processes, or implementation notes.
 -->
