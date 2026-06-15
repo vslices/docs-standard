@@ -16,8 +16,8 @@ Scope: iteration, project
 
 # <title>
 
-## Terms
+## Term
+definition
 
-- <term>: <definition>
-  - <sample>
-  - <usage>
+- example
+- usage
