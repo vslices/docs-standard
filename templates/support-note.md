@@ -1,6 +1,6 @@
 ---
 id: <type>.<short-name>
-type: [<type>-note]
+type: [<type>]
 status: <status>
 related:
   - <optional-related-artifact-id>
