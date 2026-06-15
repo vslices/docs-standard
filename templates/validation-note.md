@@ -12,7 +12,7 @@ method: <method>
 <!--
 
 Status: draft, active, resolved, superseded, or archived.
-Target type: capability, context, decision, domain-vocabulary, process, use-case
+Target type: capability, context, decision, domain-vocabulary, process, use-case, artifact
 Method: domain expert review, implementation feedback, user feedback, prototype, test, production observation, operational review, project story
 
 -->
