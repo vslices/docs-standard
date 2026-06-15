@@ -1,19 +1,21 @@
 ---
-id: support.<short-name>
-type: support-note
-status: draft
+id: <type>.<short-name>
+type: [support-note]
+status: <status>
 related:
   - <optional-related-artifact-id>
 ---
 
-# <Support note title>
-
-## Type
-
 <!--
-Concept, assumption, risk, open question, feedback, implementation note,
-scope note, improvement idea, or another lightweight note type.
+
+Types: Concept, assumption, risk, open question, feedback, implementation note, scope note, improvement or idea.
+
+Status: Open, active, resolved, superseded, or archived.
+
 -->
+
+# <title>
+
 
 ## Note
 
@@ -35,12 +37,6 @@ Why could this matter later?
 What could become confusing, risky, useful, or decision-relevant?
 -->
 
-## Current status
-
-<!--
-Open, active, resolved, superseded, or archived.
--->
-
 ## Next action
 
 <!--
@@ -51,11 +47,4 @@ Examples:
 - turn into a decision
 - clarify with a domain expert
 - archive
--->
-
-## Related artifacts
-
-<!--
-Link related contexts, processes, use cases, capabilities, decisions,
-validation notes, or other support notes.
 -->
