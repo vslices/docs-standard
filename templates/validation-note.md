@@ -39,21 +39,11 @@ What was confirmed, rejected, changed, or discovered?
 What do we understand better now?
 -->
 
-## Impact on documentation
+## Impacts
 
 <!--
 Which documents should be updated, created, split, merged, superseded, or archived?
--->
-
-## Impact on implementation
-
-<!--
 What should change or be considered in code, architecture, tests, APIs, screens, adapters, etc.?
--->
-
-## Impact on decisions
-
-<!--
 Does this confirm, challenge, invalidate, or require a decision?
 -->
 
