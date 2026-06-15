@@ -8,7 +8,7 @@ related:
 
 <!--
 
-types: mismos que document-types, but also: concept, assumption, risk, open question, feedback, implementation, scope, improvement.
+types: mismos que document-types, but also: concept, assumption, risk, open question, feedback, implementation, scope, improvement, building
 
 Status: draft, active, resolved, superseded, or archived.
 
