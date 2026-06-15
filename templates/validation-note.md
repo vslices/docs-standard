@@ -6,7 +6,7 @@ related:
   - <optional-related-artifact-id>
 target-type: <target-type>
 artifact: <route-to-artifact>
-method: <method>
+method: [<method>]
 ---
 
 <!--
