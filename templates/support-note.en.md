@@ -10,7 +10,7 @@ related:
 
 types: same as document-types, but also: concept, assumption, risk, open question, feedback, implementation, scope, improvement.
 
-Status: Open, active, resolved, superseded, or archived.
+Status: draft, active, resolved, superseded, or archived.
 
 -->
 
@@ -27,7 +27,11 @@ What should we not lose yet?
 
 <!--
 Where did this appear?
-During discovery, implementation, review, operation, feedback, planning, etc.
+With whom were you speaking?
+Which stage were we?
+
+Example: 
+During [discovery, implementation, review, operation, feedback, planning], se conversó con [...]
 -->
 
 ## Why it matters
