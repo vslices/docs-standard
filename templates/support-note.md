@@ -1,6 +1,6 @@
 ---
 id: <type>.<short-name>
-type: [support-note]
+type: [<type>-note]
 status: <status>
 related:
   - <optional-related-artifact-id>
@@ -8,7 +8,7 @@ related:
 
 <!--
 
-Types: Concept, assumption, risk, open question, feedback, implementation note, scope note, improvement or idea.
+types: same as document-types, but also: concept, assumption, risk, open question, feedback, implementation, scope, improvement.
 
 Status: Open, active, resolved, superseded, or archived.
 
