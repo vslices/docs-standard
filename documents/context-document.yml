@@ -1,0 +1,25 @@
+kind: vslices-document-definition
+version: 0.1
+
+document:
+  type: context
+  scopes:
+    - concept
+    - process
+    - flow
+    - feature
+    - capability
+    - initiative
+    - product
+    - service
+    - project
+    - organization
+    - domain-context
+    - handoff
+
+  question:
+    id: context
+    text: ¿Dónde existe?
+    children:
+      - id: assumptions
+        text: ¿Qué estamos asumiendo como cierto?

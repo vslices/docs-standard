@@ -1,49 +1,56 @@
 # VSlices Docs Standard
 
-Reusable documentation templates for VSlices Docs Standard.
+VSlices Docs Standard is the normative, versioned source for VSlices documentation artifact definitions.
 
-VSlices Docs Standard is part of the VSlices suite. Its purpose is to help preserve useful knowledge across domain discovery, documentation, architecture, implementation, and system evolution.
+Its purpose is to preserve useful knowledge across domain discovery, documentation, architecture, implementation, and system evolution without turning documentation into mandatory ceremony.
 
-This repository contains practical artifacts that can be copied, adapted, and used in real projects.
+## Authority
 
-## Current state
+The research and design history under `vslices/docs/es/alive-lab/research/notes/docs-standard/artifacts` is evidence used to develop this standard. It is not the normative source consumed by VSlices Tooling.
 
-This repository is currently in a beta prerelease stage.
+This repository owns the current official document vocabulary and will progressively define Documents, Nexus artifacts, and Continuity Paths in a machine-consumable form.
 
-For now, it only contains lightweight documentation templates. 
+VSlices Tooling may install and update a snapshot of this repository in the same spirit that target Rulesets are installed and updated independently from Tooling itself.
 
-The templates are not intended to be mandatory forms. They are starting points for preserving knowledge that future work depends on. Use the smallest useful structure.
+## Current standard surface
 
-## Available templates
+`manifest.yaml` identifies the definitions that currently belong to the standard.
 
-- [Support Note](templates/support-note.md)
-- [Domain Vocabulary](templates/domain-vocabulary.md)
-- [Context Document](templates/context-document.md)
-- [Process Document](templates/process-document.md)
-- [Use Case Document](templates/use-case-document.md)
-- [Capability Document](templates/capability-document.md)
-- [Decision Record](templates/decision-record.md)
-- [Validation Note](templates/validation-note.md)
+The first normative family being materialized is `Document`:
 
-## How to use this repository
+- [`documents/README.md`](documents/README.md) defines the progressive question-cascade model shared by Documents.
+- [`documents/context-document.yml`](documents/context-document.yml) is the first machine-consumable Document type definition.
 
-Copy the template that matches the kind of knowledge you need to preserve. Then just comment with ```<!-- -->``` any section that does not help.
+The initial Context Document intentionally contains only two questions. The goal is to prove the authoring mechanism before expanding the vocabulary:
 
-A document should grow because the domain, the work, or the risk requires it. Not because the template contains more sections.
+```text
+¿Dónde existe?
+└─ ¿Qué estamos asumiendo como cierto?
+```
 
-## What this repository is not
+Adding further Context questions should be a Docs Standard change, not a Tooling code change.
 
-This repository is not:
-- a documentation generator.
-- a complete methodology.
-- a replacement for the VSlices documentation site.
+## Progressive Documents
 
-It is a small collection of reusable documentation artifacts that support VSlices Docs Standard.
+A Document specializes in one root question. Child questions progressively refine that question.
 
-## Related resources
+Creating a Document begins with only its root question and an unanswered placeholder. Once answered, immediate child questions become available. A child is materialized only when it receives a valid answer, and deeper questions become available progressively through the same cascade.
 
-- VSlices documentation: https://vslices.readthedocs.io/
-- VSlices organization: https://github.com/vslices
+The complete question graph of a Document type is a space of possibilities, not a completion checklist. Questions that are not materialized are not missing work.
+
+## Existing templates
+
+The `templates/` directory predates the machine-consumable standard introduced here. Those files remain useful historical and manual authoring references while their knowledge is evaluated and progressively promoted into normative definitions.
+
+They must not be treated as authoritative merely because a template already exists.
+
+## Design principle
+
+VSlices Docs Standard owns the document vocabulary.
+
+VSlices Tooling owns the document authoring mechanism.
+
+The standard may evolve independently through versioned definitions while Tooling remains responsible for loading, validating, discovering, updating, and materializing them.
 
 ## License
 

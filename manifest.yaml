@@ -1,0 +1,6 @@
+kind: vslices-docs-standard
+version: 0.1
+
+documents:
+  - documents/context-document.yml
+  - documents/structure-document.yml
