@@ -44,6 +44,22 @@ The current authoring model has these invariants:
 
 The numeric question selections shown by an interactive CLI are operational conveniences. Stable question identity belongs to the definition; numeric selections do not belong to persisted document semantics.
 
+## Persisted artifact identity
+
+The current persisted front-matter contract is intentionally minimal:
+
+```yaml
+---
+artifact:
+  kind: document
+  type: context
+---
+```
+
+See [`front-matter.md`](./front-matter.md) for the authority classification that led to this shape and for the fields deliberately deferred from the earlier research proposal.
+
+Question text and the question graph are not copied into front-matter. The Document type resolves that vocabulary through the installed Docs Standard, while materialized question blocks preserve only stable question identity.
+
 ## Authority boundary
 
 VSlices Docs Standard owns the document vocabulary: Document types, stable question identities, question text, question relationships, and type-specific constraints.
