@@ -142,6 +142,40 @@ boundary condition
 diagnostic finding
 ~~~
 
+### Consistency
+
+Consistency reinforces the distinction introduced by Behavior.
+
+Questions such as:
+
+- What must remain true?
+- What constitutes an inconsistency?
+- What could appear consistent without actually being consistent?
+- What state must be restored after temporary inconsistency?
+
+are intrinsic to Consistency because they define the semantic boundary between coherent and incoherent states.
+
+They are not diagnostic merely because they talk about failure or invalid states.
+
+By contrast, questions such as:
+
+- Where do inconsistencies recur systematically?
+- Which parts produce the most consistency violations?
+- What pattern explains repeated inconsistency?
+- What structural fragility makes the rule frequently break?
+
+primarily diagnose weaknesses in the realized system or represented knowledge.
+
+Consistency therefore strengthens this provisional rule:
+
+~~~text
+defines the valid / invalid semantic space
+    -> original Document
+
+investigates why reality repeatedly falls into problematic states
+    -> stronger Diagnostic / Tension candidate
+~~~
+
 ## Accumulated diagnostic vocabulary
 
 Current recurring patterns include:
