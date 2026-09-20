@@ -5,3 +5,4 @@ documents:
   - documents/context-document.yml
   - documents/structure-document.yml
   - documents/domain-vocabulary.yml
+  - documents/consistency-document.yml
