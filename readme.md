@@ -19,16 +19,12 @@ VSlices Tooling may install and update a snapshot of this repository in the same
 The first normative family being materialized is `Document`:
 
 - [`documents/README.md`](documents/README.md) defines the progressive question-cascade model shared by Documents.
-- [`documents/context-document.yml`](documents/context-document.yml) is the first machine-consumable Document type definition.
+- `documents/*.yml` contains the machine-consumable Document type definitions registered by `manifest.yaml`.
+- [`pins/README.md`](pins/README.md) indexes open research pins discovered while promoting Document semantics.
 
-The initial Context Document intentionally contains only two questions. The goal is to prove the authoring mechanism before expanding the vocabulary:
+Document definitions are expected to grow through semantic pressure from real cases. Adding or refining valid questions is a Docs Standard change, not a Tooling code change.
 
-```text
-¿Dónde existe?
-└─ ¿Qué estamos asumiendo como cierto?
-```
-
-Adding further Context questions should be a Docs Standard change, not a Tooling code change.
+Research pins are intentionally non-normative. They preserve recurring tensions, possible cross-document responsibilities, and unresolved modeling questions until enough evidence exists to promote a stable semantic rule.
 
 ## Progressive Documents
 
