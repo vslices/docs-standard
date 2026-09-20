@@ -20,6 +20,8 @@ During each Document review:
 - [Documentary Nexus, shared representations, and semantic granularity](document-nexus-composition.md)
 - [Diagnostic tension and fragility](diagnostic-tension-and-fragility.md)
 - [Drift](drift.md)
+- [Repeated semantic subjects and cardinality](repeated-semantic-subjects-and-cardinality.md)
+- [Realization and the separation between requirement and materialization](realization.md)
 
 ## Resolved pins
 
@@ -63,7 +65,24 @@ Research around:
 - obsolescence;
 - divergence between represented or expected knowledge and current or observed reality.
 
-Consistency is the next explicit pressure case for the Drift hypothesis.
+### Repeated semantic subjects / cardinality
+
+Research around:
+
+- one question introducing N semantic subjects;
+- stable identity for those subjects;
+- repeated subordinate questions per subject;
+- distinction between subject cardinality and answer cardinality;
+- progressive authoring over repeated semantic subjects.
+
+### Realization
+
+Research around:
+
+- separation between what must be true and how it is concretely realized;
+- descriptive current realization versus intended realization;
+- relationship with Structure, Behavior, Consistency, Decision Record, and Software Project Continuity Paths;
+- preserving semantics, authority, mechanism, and realization as distinct concerns.
 
 ## Rule of promotion
 
