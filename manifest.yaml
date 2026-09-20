@@ -4,3 +4,4 @@ version: 0.1
 documents:
   - documents/context-document.yml
   - documents/structure-document.yml
+  - documents/domain-vocabulary.yml
