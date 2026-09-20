@@ -22,6 +22,8 @@ During each Document review:
 - [Drift](drift.md)
 - [Repeated semantic subjects and cardinality](repeated-semantic-subjects-and-cardinality.md)
 - [Realization and the separation between requirement and materialization](realization.md)
+- [Constraint as decision input](constraint-as-decision-input.md)
+- [Documentary Nexus proposals](documentary-nexus-proposals.md)
 
 ## Resolved pins
 
@@ -83,6 +85,25 @@ Research around:
 - descriptive current realization versus intended realization;
 - relationship with Structure, Behavior, Consistency, Decision Record, and Software Project Continuity Paths;
 - preserving semantics, authority, mechanism, and realization as distinct concerns.
+
+### Constraint -> Decision
+
+Research around:
+
+- Constraint as input to decision criteria and alternative evaluation;
+- hard constraints eliminating options;
+- soft constraints shaping tradeoffs;
+- keeping Constraint risk distinct from Decision risk;
+- preserving the relation without duplicating Constraint knowledge in Decision Records.
+
+### Nexus proposals
+
+Research around:
+
+- recurring constellations of Documents around concrete targets;
+- candidate relations between declarative, prescriptive, justificatory, descriptive, and drift perspectives;
+- possible reusable Nexus compositions;
+- relationship between Nexus composition and Continuity Paths.
 
 ## Rule of promotion
 
