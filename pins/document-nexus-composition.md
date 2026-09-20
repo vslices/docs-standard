@@ -169,6 +169,26 @@ A useful provisional formulation is:
 
 This formulation helps distinguish semantic questioning from documentary composition, but it remains revisable.
 
+## Emerging document constellations
+
+Research has now produced recurring groups of Documents around concrete targets.
+
+The detailed candidate constellations are tracked separately in:
+
+- [Documentary Nexus proposals](documentary-nexus-proposals.md)
+
+The important connection to this pin is that recursive Nexus composition may organize not only multiple views of shared knowledge, but also recurring semantic roles around a target:
+
+~~~text
+declarative
+prescriptive
+justificatory
+descriptive
+comparative
+~~~
+
+This strengthens the Nexus hypothesis without yet making any constellation mandatory.
+
 ## Open questions
 
 - Does a Nexus contain Documents, relate them, or both?
