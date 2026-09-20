@@ -142,6 +142,45 @@ observed behavior
 
 This can be called behavioral drift provisionally.
 
+### Consistency
+
+Consistency independently produced the fifth recurring drift case.
+
+Its core semantics define:
+
+~~~text
+what must remain coherent
+what must remain true
+~~~
+
+while Drift asks whether the observed state still corresponds to those expectations:
+
+~~~text
+required consistency
+vs
+observed state
+    -> inconsistency / divergence
+~~~
+
+Examples include:
+
+- a consistency rule that should always hold but no longer does;
+- participants that should converge but remain divergent;
+- relationships that should correspond but are observed out of sync;
+- a tolerated inconsistency window that is exceeded in practice.
+
+Consistency also clarifies an important boundary:
+
+~~~text
+Consistency
+    = defines what counts as coherent or incoherent
+
+Drift
+    = records where observed reality diverges from that expected coherence
+~~~
+
+This satisfies the promotion threshold previously defined for the Drift hypothesis.
+
 ## Accumulated drift forms
 
 Current evidence includes:
@@ -171,20 +210,20 @@ This is not yet a conclusion.
 
 ## Promotion threshold
 
-The current plan is to inspect Consistency next.
+The threshold has now been met.
 
-If Consistency independently produces a natural comparison such as:
+Consistency independently reproduced the same comparison pattern found in Context, Structure, Domain Vocabulary, Decision Record, and Behavior:
 
 ~~~text
-what must remain true
+represented / expected state
 vs
-what is currently observed
+current / observed state
     -> divergence
 ~~~
 
-then the evidence threshold for formalizing Drift as a candidate Document responsibility will be considered met.
+Drift should now be treated as a real candidate Document responsibility that deserves its own semantic review.
 
-That would provide five strong recurring cases across distinct documentary responsibilities.
+The pin remains open until that review determines the root question, scope, boundaries, and relationship with Feedback, Validation, Verification, and source Documents.
 
 ## Open questions
 
@@ -223,6 +262,8 @@ hypothesis
 
 ## Current status
 
-Open research pin.
+Candidate Document responsibility.
 
-Consistency is the next explicit pressure case before promotion.
+The evidence threshold has been reached. The next step is a dedicated semantic review of Drift itself.
+
+Do not move this pin to resolved until a concrete resolution is reached, such as promotion into normative semantics, rejection, absorption, or reframing.
