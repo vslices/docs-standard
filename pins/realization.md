@@ -44,6 +44,46 @@ consistency realization
 
 An Aggregate Root is one way to realize a consistency unit. It does not define the semantic ceiling of consistency.
 
+## Declarative, prescriptive, and descriptive separation
+
+Subsequent review refined the original two-way distinction into three responsibilities:
+
+~~~text
+Declarative
+    = what must be true / what must occur
+
+Prescriptive
+    = what constraints and considerations shape acceptable realizations
+
+Descriptive
+    = how the target is currently realized
+~~~
+
+Current mapping:
+
+~~~text
+Behavior / Consistency
+    -> declarative
+
+Constraint
+    -> prescriptive
+
+Realization
+    -> descriptive
+~~~
+
+This changes the Realization hypothesis materially.
+
+Realization should not own the question "How should this be realized?".
+
+Its responsibility is instead the descriptive question:
+
+> How is this currently realized?
+
+Constraint owns the pressures, limitations, and considerations that shape possible realizations.
+
+Decision Record records which option was selected and which tradeoffs were accepted.
+
 ## Broader hypothesis
 
 The same separation may recur beyond Consistency:
@@ -74,26 +114,19 @@ The second side may deserve a distinct Document responsibility. This is not yet 
 
 ## Candidate root-question space
 
-Possible formulations include:
+The descriptive responsibility is now clearer.
 
-- ¿Cómo se realiza?
+Strong candidates include:
+
 - ¿Cómo está realizado?
-- ¿Cómo se materializa?
-- ¿Cómo está implementado?
+- ¿Cómo se materializa actualmente?
+- ¿Cómo está implementado actualmente?
 
-None is selected yet.
+The previous question "¿Cómo debería realizarse?" is no longer treated as part of Realization.
 
-An important distinction may exist between current and intended realization:
+Prescriptive pressure belongs primarily to Constraint, while selecting an option belongs to Decision Record.
 
-~~~text
-¿Cómo está realizado?
-    -> descriptive / observed current state
-
-¿Cómo debería realizarse?
-    -> prescriptive design intent
-~~~
-
-These may not belong to the same documentary responsibility.
+A separate future question may still exist for proposed designs, but it should not be conflated with current Realization.
 
 ## Relationship with existing Documents
 
@@ -211,32 +244,33 @@ That something implements or enforces a rule does not automatically make it the 
 
 A Realization Document, if it exists, should describe realization without silently claiming ownership of the semantics it realizes.
 
-## Descriptive versus prescriptive realization
+## Current realization versus proposed future realization
 
-One major unresolved tension is whether Realization should describe:
-
-1. the system as it currently exists;
-2. the realization we intend to build;
-3. both, with an explicit distinction.
+Realization is now treated as descriptive:
 
 ~~~text
-current realization
-!=
-target realization
+Realization
+    = current concrete realization
 ~~~
 
-Conflating them would recreate exactly the continuity loss this research is trying to avoid.
+A future proposed realization still needs representation somewhere, but that responsibility is unresolved.
 
-This may eventually interact with Drift:
+Constraint should not describe the proposed mechanism; it only constrains the option space.
+
+Decision Record explains the selected direction.
+
+A future design/proposal responsibility may still be needed between Decision and Realization, but no new Document is assumed yet.
+
+Potential Drift relation:
 
 ~~~text
-intended realization
+documented current realization
 vs
-observed realization
-    -> implementation / realization drift
+observed implementation
+    -> realization drift
 ~~~
 
-Do not promote this relation yet.
+This remains a Drift question, not a reason to make Realization prescriptive.
 
 ## Relationship with Documentary Nexus
 
