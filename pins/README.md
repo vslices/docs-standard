@@ -22,6 +22,7 @@ During each Document review:
 - [Drift](drift.md)
 - [Repeated semantic subjects and cardinality](repeated-semantic-subjects-and-cardinality.md)
 - [Realization and the separation between requirement and materialization](realization.md)
+- [Realization and Update continuity](realization-update-continuity.md)
 - [Constraint as decision input](constraint-as-decision-input.md)
 - [Documentary Nexus proposals](documentary-nexus-proposals.md)
 
@@ -65,7 +66,8 @@ Research around:
 - validity;
 - degradation;
 - obsolescence;
-- divergence between represented or expected knowledge and current or observed reality.
+- unreconciled divergence between represented knowledge and observed reality;
+- distinction between explicit evolution and silent documentary divergence.
 
 ### Repeated semantic subjects / cardinality
 
@@ -82,9 +84,19 @@ Research around:
 Research around:
 
 - separation between what must be true and how it is concretely realized;
-- descriptive current realization versus intended realization;
-- relationship with Structure, Behavior, Consistency, Decision Record, and Software Project Continuity Paths;
+- one Realization responsibility with current and proposed states;
+- prospective description versus prescriptive Constraint;
+- relationship with Structure, Behavior, Consistency, Constraint, Decision Record, Update, and Software Project Continuity Paths;
 - preserving semantics, authority, mechanism, and realization as distinct concerns.
+
+### Realization / Update continuity
+
+Research around:
+
+- Realization as state and Update as transition;
+- current state, proposed state, planned change, executed change, and resulting state;
+- explicit evolution versus unreconciled Drift;
+- how this cycle may participate in Software Project Continuity Paths.
 
 ### Constraint -> Decision
 
