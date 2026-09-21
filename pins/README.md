@@ -23,6 +23,7 @@ During each Document review:
 - [Repeated semantic subjects and cardinality](repeated-semantic-subjects-and-cardinality.md)
 - [Realization and the separation between requirement and materialization](realization.md)
 - [Realization and Update continuity](realization-update-continuity.md)
+- [Validation and representativeness boundaries](validation.md)
 - [Documentary patch semantics](documentary-patch-semantics.md)
 - [Constraint as decision input](constraint-as-decision-input.md)
 - [Documentary Nexus proposals](documentary-nexus-proposals.md)
@@ -127,6 +128,15 @@ Research around:
 - candidate relations between declarative, prescriptive, justificatory, descriptive, and drift perspectives;
 - possible reusable Nexus compositions;
 - relationship between Nexus composition and Continuity Paths.
+
+### Validation
+
+Research around:
+
+- applicability and representativeness boundaries;
+- future loss of validity;
+- whether validation owns evaluation of represented knowledge against validity conditions;
+- relationship with Drift and Verification.
 
 ## Rule of promotion
 
