@@ -120,19 +120,30 @@ The exact Update semantics must be reviewed independently.
 
 ## Planned versus observed Update
 
-The same tension that appeared in Realization may appear in Update:
+Update review now provides stronger evidence for treating planned and observed change as compatible but independently representable Update Documents:
 
 ~~~text
-planned update
+planned Update
     = what we intend to change
 
-observed update
+observed Update
     = what actually changed
 ~~~
 
-It is not yet decided whether these are states of one Update Document, related Update Documents, or another model.
+There is no need to force both roles into one mutable Update artifact.
 
-Do not force that choice before reviewing the historical Update Document.
+Several Updates may participate in reconstructing one evolution:
+
+~~~text
+planned Update
+-> execution
+-> observed Update
+-> resulting Realization
+~~~
+
+This preserves write-once historical knowledge while allowing actual results to differ from the plan.
+
+Whether Docs Standard eventually names these states or relations remains open.
 
 ## Reconciliation after execution
 
@@ -273,7 +284,7 @@ This should be tested when Software Project Continuity Path is reviewed directly
 - Can one proposed Realization require several Updates?
 - Is a proposed Realization required before an Update can exist?
 - Can an Update itself define enough target-state detail without duplicating Realization?
-- Should planned and observed Update be states of the same Document?
+- Should planned and observed Update be named states, relations between separate Updates, or simply inferred from their evidence and role?
 - How should partial completion be represented?
 - What happens when execution intentionally diverges from the proposed Realization?
 - When must a new Decision Record be created?
