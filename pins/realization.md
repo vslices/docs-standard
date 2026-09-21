@@ -1,8 +1,8 @@
-# Realization and the separation between requirement and materialization
+# Realization and the separation between semantics, constraints, decisions, and materialization
 
 ## Research question
 
-> Do we need a distinct documentary responsibility for describing how required semantics are actually realized in software or another concrete system?
+> Do we need a distinct documentary responsibility for describing how semantics are concretely realized, whether currently or prospectively?
 
 ## Origin
 
@@ -19,7 +19,7 @@ who has semantic authority over change
 
 but a separate question appears naturally:
 
-> How is this consistency actually realized?
+> How is this consistency realized?
 
 Possible realizations include:
 
@@ -44,9 +44,9 @@ consistency realization
 
 An Aggregate Root is one way to realize a consistency unit. It does not define the semantic ceiling of consistency.
 
-## Declarative, prescriptive, and descriptive separation
+## Declarative, prescriptive, justificatory, and descriptive separation
 
-Subsequent review refined the original two-way distinction into three responsibilities:
+Subsequent review refined the surrounding responsibilities:
 
 ~~~text
 Declarative
@@ -55,8 +55,11 @@ Declarative
 Prescriptive
     = what constraints and considerations shape acceptable realizations
 
+Justificatory
+    = what option was chosen and why
+
 Descriptive
-    = how the target is currently realized
+    = what concrete realization exists or is intended
 ~~~
 
 Current mapping:
@@ -68,71 +71,114 @@ Behavior / Consistency
 Constraint
     -> prescriptive
 
+Decision Record
+    -> justificatory
+
 Realization
     -> descriptive
 ~~~
 
-This changes the Realization hypothesis materially.
+Realization should not own the question:
 
-Realization should not own the question "How should this be realized?".
+> What should be considered when choosing a realization?
 
-Its responsibility is instead the descriptive question:
+That belongs primarily to Constraint.
 
-> How is this currently realized?
+Nor should it own:
 
-Constraint owns the pressures, limitations, and considerations that shape possible realizations.
+> Which option should we choose?
 
-Decision Record records which option was selected and which tradeoffs were accepted.
+That belongs to Decision Record.
 
-## Broader hypothesis
+Realization describes a concrete realization.
 
-The same separation may recur beyond Consistency:
+## One responsibility, multiple realization states
 
-~~~text
-Behavior
-    -> what must occur
+A key refinement is that current and proposed realization do not require different Document types.
 
-Realization
-    -> how that behavior is currently implemented
+They answer the same semantic responsibility at different positions relative to materialization.
 
-Consistency
-    -> what must remain coherent
+The root question can therefore remain atemporal:
 
-Realization
-    -> what mechanism currently preserves that coherence
-~~~
+> How is it realized?
 
-This suggests a broader documentary axis:
+and a realization may be interpreted as:
 
 ~~~text
-what must be true / what must happen
-vs
-how it is concretely realized
+current / observed
+    -> How is it realized now?
+
+proposed / intended
+    -> How will it be realized?
 ~~~
 
-The second side may deserve a distinct Document responsibility. This is not yet a conclusion.
+This does not make proposed Realization prescriptive.
 
-## Candidate root-question space
+A proposed Realization is a prospective description of a concrete target state.
 
-The descriptive responsibility is now clearer.
+It says:
 
-Strong candidates include:
+> this is the realization we intend to materialize.
 
-- ¿Cómo está realizado?
-- ¿Cómo se materializa actualmente?
-- ¿Cómo está implementado actualmente?
+It does not say:
 
-The previous question "¿Cómo debería realizarse?" is no longer treated as part of Realization.
+> every acceptable realization must look like this.
 
-Prescriptive pressure belongs primarily to Constraint, while selecting an option belongs to Decision Record.
+That distinction belongs to Constraint.
 
-A separate future question may still exist for proposed designs, but it should not be conflated with current Realization.
+## Important distinction: prescriptive vs prospective descriptive
 
-## Relationship with existing Documents
+~~~text
+Constraint
+    -> shapes the option space
 
-### Structure
+Realization (proposed)
+    -> describes one concrete intended state inside that option space
+~~~
 
-Structure may already describe part of the concrete organization.
+For example:
+
+~~~text
+Constraint:
+    The system must tolerate multi-region deployment.
+
+Decision:
+    Choose regional authority with asynchronous reconciliation.
+
+Realization (proposed):
+    Inventory ownership will be partitioned by region,
+    with reconciliation through asynchronous messages.
+~~~
+
+The third statement is still descriptive, but prospective.
+
+## Current and proposed must not be silently mixed
+
+A single representation must not blur:
+
+~~~text
+what exists now
++
+what is intended later
+~~~
+
+Otherwise documentary continuity becomes ambiguous.
+
+A sentence such as:
+
+> The application uses Kafka.
+
+must not mean:
+
+> The application currently does not use Kafka, but we plan to.
+
+The same Document type may represent current and proposed realization, but the state of each realization must remain semantically distinguishable.
+
+How that distinction is encoded is a later modeling/tooling question.
+
+## Relationship with Structure
+
+Structure may describe concrete organization.
 
 Open question:
 
@@ -148,90 +194,146 @@ Realization
     = which concrete mechanisms embody previously defined semantics
 ~~~
 
-### Behavior
+A Realization may reference structural knowledge rather than duplicate it.
 
-Behavior defines expected semantics:
+## Relationship with Behavior and Consistency
 
-~~~text
-¿Qué debe ocurrir?
-~~~
-
-Realization may instead describe which code path, component, process, handler, service, or mechanism makes it occur.
-
-Behavior should remain valid even if its realization changes.
-
-### Consistency
-
-Consistency provides the strongest witness:
+Behavior and Consistency define expected semantics:
 
 ~~~text
-¿Qué debe mantenerse coherente?
-    -> semantic requirement
+Behavior
+    -> What must occur?
 
-¿Cómo se preserva actualmente?
-    -> realization
+Consistency
+    -> What must remain coherent?
 ~~~
 
-Changing Aggregate Root to service orchestration should not necessarily change the Consistency Document if the semantic unit and invariants remain the same.
+Realization describes how those semantics are embodied:
 
-### Decision Record
+~~~text
+Realization
+    -> How is that behavior / consistency realized?
+~~~
 
-A Decision Record may explain why a realization was chosen, but it does not itself describe the complete realization.
+Changing the realization should not necessarily change the originating declarative semantics.
+
+## Relationship with Constraint
+
+Constraint defines pressures and restrictions on possible realizations:
+
+~~~text
+Constraint
+    -> What conditions the realization space?
+~~~
+
+Realization references or responds to those constraints by describing a concrete state.
+
+Constraint does not itself select or describe the chosen mechanism.
+
+## Relationship with Decision Record
+
+Decision Record records why a realization direction was selected:
 
 ~~~text
 Decision
-    = why this direction was selected
+    = why this option was selected
 
 Realization
-    = what currently embodies that direction
+    = what concrete state embodies that selection
 ~~~
+
+A Decision may justify a proposed Realization.
+
+A Realization should not need to repeat the full rationale.
+
+## Relationship with Update
+
+The new evidence strongly suggests:
+
+~~~text
+Realization
+    = state
+
+Update
+    = transition
+~~~
+
+A proposed Realization describes a target state.
+
+An Update describes the transformation intended to move from one realization state to another.
+
+After execution, Update can preserve what was actually changed and what was not.
+
+The resulting current Realization should then be updated to describe what actually exists.
+
+This relationship is tracked in:
+
+- [Realization and Update continuity](realization-update-continuity.md)
+
+## Relationship with Drift
+
+A Realization can participate in at least two comparisons:
+
+~~~text
+documented current realization
+vs
+observed implementation
+    -> possible realization drift
+~~~
+
+and:
+
+~~~text
+proposed realization
+vs
+resulting current realization
+~~~
+
+However, not every difference is Drift.
+
+If the difference is explicitly explained and reconciled through Decision, Update, and revised Realization, it is evolution.
+
+Drift is a candidate when divergence remains unreconciled.
 
 ## Software Project Continuity Path
 
-This pin is especially relevant to the Software Project Continuity Path.
+Realization appears increasingly central to the Software Project Continuity Path.
 
-A software-project path may need to preserve continuity across:
-
-~~~text
-domain / product semantics
-    -> documentary expectations
-    -> design decisions
-    -> concrete realization
-    -> verification
-    -> evolution
-~~~
-
-A recurring concern is that VSlices can describe what should be true without yet having a clear documentary responsibility for describing what concrete software currently exists as its realization.
-
-If Realization becomes a Document, Software Project may be able to connect:
+A provisional path is:
 
 ~~~text
-What must be
-    -> references
-How it is realized
+Behavior / Consistency
+    -> declarative semantics
+
+Constraint
+    -> pressures on possible realizations
+
+Decision Record
+    -> selected direction and accepted tradeoffs
+
+Realization (proposed)
+    -> concrete intended state
+
+Update
+    -> intended and observed transition
+
+Realization (current)
+    -> concrete resulting state
+
+Verification
+    -> evidence that realization preserves expected semantics
+
+Drift
+    -> unreconciled divergence
 ~~~
 
-rather than forcing expected semantics and implementation details into the same Document.
+This is not a waterfall.
 
-This separation matters for migration and evolution:
-
-~~~text
-expected semantics stay stable
-while realization changes
-~~~
-
-or:
-
-~~~text
-realization stays present
-while expected semantics are revised
-~~~
-
-Those are materially different changes.
+New evidence can cause earlier knowledge to be revised.
 
 ## Authority distinction
 
-The pin must preserve the VSlices distinction between:
+Preserve the VSlices distinction:
 
 ~~~text
 semantics
@@ -242,92 +344,53 @@ realization
 
 That something implements or enforces a rule does not automatically make it the semantic authority for that rule.
 
-A Realization Document, if it exists, should describe realization without silently claiming ownership of the semantics it realizes.
+A Realization Document should describe realization without silently claiming ownership of the semantics it realizes.
 
-## Current realization versus proposed future realization
+## Candidate root-question space
 
-Realization is now treated as descriptive:
+The responsibility is now clearer.
 
-~~~text
-Realization
-    = current concrete realization
-~~~
+Strong root candidate:
 
-A future proposed realization still needs representation somewhere, but that responsibility is unresolved.
+> ¿Cómo se realiza?
 
-Constraint should not describe the proposed mechanism; it only constrains the option space.
-
-Decision Record explains the selected direction.
-
-A future design/proposal responsibility may still be needed between Decision and Realization, but no new Document is assumed yet.
-
-Potential Drift relation:
+Contextual variants:
 
 ~~~text
-documented current realization
-vs
-observed implementation
-    -> realization drift
+current
+    -> ¿Cómo está realizado?
+
+proposed
+    -> ¿Cómo se realizará?
 ~~~
 
-This remains a Drift question, not a reason to make Realization prescriptive.
-
-## Relationship with Documentary Nexus
-
-A Nexus may allow a target to connect several perspectives:
-
-~~~text
-Nexus(Target)
-├─ Behavior
-├─ Consistency
-├─ Structure
-├─ Decision Record
-└─ Realization?
-~~~
-
-Realization may therefore be one documentary perspective around the same target rather than the owner of the target itself.
-
-This supports the hypothesis:
-
-> the realization references the requirement rather than redefining it.
-
-For example:
-
-~~~text
-Consistency
-    defines the consistency requirement
-
-Realization
-    references that requirement
-    and describes the mechanism that currently enforces it
-~~~
+The root itself should not force temporal state into the Document type.
 
 ## Open questions
 
-- Is Realization actually a new Document type?
-- Is it already fully covered by Structure plus other existing Documents?
-- Is there one Realization Document or several specialized realization perspectives?
-- Should realization be descriptive, prescriptive, or explicitly distinguish both?
-- What is the correct root question?
-- What does Realization own that Structure does not?
-- What does Realization own that Decision Record does not?
-- Can one realization satisfy several semantic Documents?
-- Can one semantic requirement have several realizations?
-- How are alternative realizations represented?
-- How does a realization reference the semantic requirement it implements?
+- Is Realization fully distinct from Structure?
+- What minimum knowledge makes a concrete state a Realization rather than merely a Structure?
+- Can one Realization satisfy several declarative Documents?
+- Can one semantic requirement have several simultaneous Realizations?
+- How should Realization reference the semantics it embodies?
+- How should Realization reference the Constraints and Decisions that shaped it?
 - Can Realization describe non-software mechanisms such as organizational processes?
-- Does Software Project need Realization as a central continuity step?
-- How should realization changes be distinguished from semantic changes?
-- Does implementation drift belong to Drift, Realization, or their relation?
+- How should current and proposed realization states be represented without multiplying Document types?
+- Can several proposed realizations coexist before a Decision selects one?
+- Does an unselected candidate belong to Realization, another proposal artifact, or only exploratory work?
+- When should a proposed Realization become current?
+- How does superseded proposed realization remain historically reconstructible?
+- How should Realization drift be distinguished from explicit evolution?
 
 ## Current status
 
-Open research pin.
+Open research pin with a strengthened candidate responsibility.
 
-Do not add realization questions to Consistency merely because the current implementation mechanism is useful to know.
+Current evidence favors one Realization Document type with distinguishable current and proposed states.
 
-Preserve the separation:
+Preserve:
 
-> what must hold first; how it is realized second.
-
-The second may reference the first without redefining it.
+> what must hold first;
+> what constrains the option space second;
+> what was chosen third;
+> how it is or will be realized fourth.
