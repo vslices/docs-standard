@@ -269,6 +269,36 @@ Drift concerns current represented knowledge that no longer corresponds to obser
 
 Because Update operates at answer level, reconciliation may also be answer-level: some answers can be reconciled while others remain divergent.
 
+## Context questions pending possible extraction
+
+Context currently retains several questions that define or anticipate loss of representativeness:
+
+~~~text
+¿Dónde deja de ser representativo?
+
+¿Qué condiciones volverían obsoleto este contexto?
+├─ ¿Qué condiciones podrían cambiar?
+└─ ¿Qué señales indicarían que dejó de ser representativo?
+~~~
+
+These remain useful inside Context while Drift is still only a candidate responsibility.
+
+If Drift is formalized, review these questions explicitly rather than leaving duplicate ownership by inertia.
+
+The likely boundary to test is:
+
+~~~text
+Context
+    = defines applicability and the conditions under which
+      its representation would cease to hold
+
+Drift
+    = records observed, unreconciled divergence from
+      that represented context
+~~~
+
+Some or all of the obsolescence questions may move, be reframed, or remain as validity conditions on Context. No extraction is decided yet.
+
 ## Relationship with Update
 
 Update appears to be one mechanism by which change becomes reconstructible rather than drifting silently.
