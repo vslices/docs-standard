@@ -2,15 +2,15 @@
 
 ## Research question
 
-> Do recurring differences between represented knowledge and current reality reveal a distinct Drift Document responsibility?
+> Do unreconciled differences between represented knowledge and observed reality reveal a distinct Drift Document responsibility?
 
 ## Observation
 
-Several Document reviews independently produced questions about when preserved knowledge stops corresponding to the reality it is meant to represent.
+Multiple Document reviews independently produced questions about when preserved knowledge stops corresponding to the reality it is meant to represent.
 
 The recurring pattern is not merely maintenance or artifact lifecycle.
 
-It is a comparison:
+Earlier research used:
 
 ~~~text
 represented / expected knowledge
@@ -19,7 +19,84 @@ current / observed reality
     -> divergence
 ~~~
 
-This pin preserves the evidence for a possible Drift Document before promoting that responsibility.
+Realization and Update research refined this.
+
+Not every divergence is Drift.
+
+A difference may be explicitly understood, justified, and reconciled through documentary evolution.
+
+The stronger candidate definition is:
+
+> Drift is an unreconciled divergence between represented knowledge and observed reality.
+
+## Divergence versus evolution
+
+This distinction is now central.
+
+~~~text
+expected / represented state
+vs
+observed state
+    -> difference
+~~~
+
+A difference can become explicit evolution when continuity is preserved:
+
+~~~text
+new evidence
+    -> Decision / Update
+    -> revised representation
+    -> current reality reconciled with documented knowledge
+~~~
+
+By contrast:
+
+~~~text
+represented expectation
+vs
+observed reality
+    -> unexplained or unreconciled divergence
+    -> Drift candidate
+~~~
+
+Example:
+
+~~~text
+Proposed Realization:
+    C
+
+Observed implementation:
+    C'
+
+No revised Decision
+No Update explanation
+No revised Realization
+
+=> unreconciled divergence
+=> Drift candidate
+~~~
+
+But:
+
+~~~text
+Proposed Realization:
+    C
+
+New evidence:
+    C is no longer appropriate
+
+Decision:
+    choose C'
+
+Update:
+    records C -> C'
+
+Realization:
+    now describes C'
+
+=> explicit evolution
+=> not necessarily Drift
+~~~
 
 ## Distinction from maintenance
 
@@ -37,8 +114,8 @@ obsolescence
     = representation is no longer sufficiently useful or correct
 
 drift
-    = observable divergence between represented/expected knowledge
-      and current/observed reality
+    = unreconciled divergence between represented knowledge
+      and observed reality
 ~~~
 
 These distinctions remain provisional.
@@ -47,13 +124,7 @@ These distinctions remain provisional.
 
 ### Context
 
-Observed questions include:
-
-- What would change if an assumption were false?
-- What conditions would make this context obsolete?
-- What signals would indicate that it stopped being representative?
-
-Potential drift form:
+Potential form:
 
 ~~~text
 documented context
@@ -61,17 +132,11 @@ vs
 current environment
 ~~~
 
+Drift exists when the context no longer represents the environment and that divergence has not been reconciled through documentary evolution.
+
 ### Structure
 
-Observed questions include:
-
-- When does this structure stop representing the target correctly?
-- What changes would invalidate parts of the model?
-- What relations could change?
-- What parts could appear or disappear?
-- What signals indicate that the structure is outdated?
-
-Potential drift form:
+Potential form:
 
 ~~~text
 represented structure
@@ -79,18 +144,11 @@ vs
 observed structure
 ~~~
 
+A changed structure is not automatically Drift if the Structure Document is deliberately revised as part of an explicit change.
+
 ### Domain Vocabulary
 
-Observed questions include:
-
-- When does this vocabulary stop representing the shared language correctly?
-- What terms stopped corresponding to the domain?
-- What meanings changed?
-- What new concepts appeared?
-- What distinctions stopped being useful?
-- What signals indicate that the vocabulary is outdated?
-
-Potential drift form:
+Potential form:
 
 ~~~text
 documented vocabulary
@@ -98,20 +156,11 @@ vs
 language effectively used or needed
 ~~~
 
+Vocabulary evolution is distinct from vocabulary drift when the change is explicitly recognized and incorporated.
+
 ### Decision Record
 
-Observed questions include:
-
-- What would make this decision need review?
-- What assumption would have to change?
-- What new evidence could challenge it?
-- What contextual change could invalidate it?
-- What unexpected consequence could justify reopening it?
-- What signals indicate that its foundations no longer hold?
-
-Decision Record is a less direct drift witness because its semantics concern continuing defensibility rather than mirroring an observable target.
-
-Potential drift form:
+Potential form:
 
 ~~~text
 decision foundations at decision time
@@ -119,20 +168,13 @@ vs
 current evidence and conditions
 ~~~
 
-This case suggests that a Document may still need its own validity questions even if Drift becomes a separate responsibility.
+A Decision Record may remain historically correct even if its foundations no longer hold.
+
+The resulting divergence may trigger review without rewriting the original historical decision.
 
 ### Behavior
 
-Observed questions include:
-
-- When does this description stop representing the real behavior correctly?
-- What process change would invalidate it?
-- What rule change would invalidate it?
-- What participant change would invalidate it?
-- What new variation is no longer represented?
-- What signals indicate divergence between documented and real behavior?
-
-Behavior provides a particularly direct drift witness:
+Potential form:
 
 ~~~text
 expected / documented behavior
@@ -140,46 +182,44 @@ vs
 observed behavior
 ~~~
 
-This can be called behavioral drift provisionally.
+Observed variation is not Drift if it becomes accepted semantics and Behavior is revised accordingly.
 
 ### Consistency
 
-Consistency independently produced the fifth recurring drift case.
-
-Its core semantics define:
-
-~~~text
-what must remain coherent
-what must remain true
-~~~
-
-while Drift asks whether the observed state still corresponds to those expectations:
+Consistency supplied the fifth independent witness:
 
 ~~~text
 required consistency
 vs
 observed state
-    -> inconsistency / divergence
 ~~~
 
-Examples include:
+Consistency defines what counts as coherent or incoherent.
 
-- a consistency rule that should always hold but no longer does;
-- participants that should converge but remain divergent;
-- relationships that should correspond but are observed out of sync;
-- a tolerated inconsistency window that is exceeded in practice.
+Drift records unreconciled divergence between that expectation and reality.
 
-Consistency also clarifies an important boundary:
+### Realization
+
+Realization adds a new concrete form:
 
 ~~~text
-Consistency
-    = defines what counts as coherent or incoherent
-
-Drift
-    = records where observed reality diverges from that expected coherence
+documented current realization
+vs
+observed implementation
+    -> realization drift
 ~~~
 
-This satisfies the promotion threshold previously defined for the Drift hypothesis.
+It also exposes another comparison:
+
+~~~text
+proposed realization
+vs
+resulting realization
+~~~
+
+This second comparison only becomes Drift when the difference remains unreconciled.
+
+If Update and Decision explain the deviation and Realization is revised, it is explicit evolution.
 
 ## Accumulated drift forms
 
@@ -189,73 +229,92 @@ Current evidence includes:
 - structural drift;
 - semantic / vocabulary drift;
 - behavioral drift;
-- decision-foundation drift or decision invalidation.
+- consistency drift;
+- decision-foundation drift or decision invalidation;
+- realization drift.
 
 ## Emerging model
 
-A promising separation is:
+A stronger separation now appears:
 
 ~~~text
-Each Document
-    defines what a valid / representative account of its subject means
+Source Document
+    defines or represents knowledge
+
+Observed reality
+    provides current evidence
+
+Update / Decision / revision
+    can explicitly reconcile change
 
 Drift
-    compares that account against current evidence or observation
-    and records divergence
+    captures divergence that remains unreconciled
 ~~~
 
-This would allow validity semantics to remain specialized by each Document while Drift becomes a separate comparison-oriented responsibility.
+This makes Drift comparative without turning every change into a defect.
 
-This is not yet a conclusion.
+## Relationship with Update
+
+Update appears to be one mechanism by which change becomes reconstructible rather than drifting silently.
+
+Provisional relationship:
+
+~~~text
+planned change
+    -> Update
+
+executed change
+    -> Update records what happened
+
+new reality
+    -> source Documents are revised
+
+difference fully reconciled
+    -> evolution
+
+difference remains
+    -> Drift candidate
+~~~
+
+This does not mean every change requires an Update Document.
+
+That question belongs to Update semantics and Continuity Paths.
 
 ## Promotion threshold
 
-The threshold has now been met.
+The threshold has been met.
 
-Consistency independently reproduced the same comparison pattern found in Context, Structure, Domain Vocabulary, Decision Record, and Behavior:
+Context, Structure, Domain Vocabulary, Decision Record, Behavior, and Consistency independently produced the comparison pattern.
 
-~~~text
-represented / expected state
-vs
-current / observed state
-    -> divergence
-~~~
+Realization and Update subsequently refined the responsibility from generic divergence to unreconciled divergence.
 
-Drift should now be treated as a real candidate Document responsibility that deserves its own semantic review.
-
-The pin remains open until that review determines the root question, scope, boundaries, and relationship with Feedback, Validation, Verification, and source Documents.
+Drift should be treated as a candidate Document responsibility deserving its own semantic review.
 
 ## Open questions
 
-- Is Drift itself a Document type?
 - What is the root question of a Drift Document?
-- Does Drift compare a Document against evidence, a target against an assertion, or both?
+- What exactly counts as reconciled divergence?
+- Does reconciliation require updating the original Document, or can a relation to newer knowledge suffice?
+- Can a Drift Document compare one source Document or several?
 - Does Drift require an explicit baseline?
 - What counts as evidence of divergence?
-- Can one Drift Document compare several documentary perspectives of the same target?
-- Does Drift belong naturally inside a Documentary Nexus?
-- How is historical validity preserved when something is no longer currently valid?
+- Can a Drift remain open while remediation is planned?
 - How does Drift differ from Feedback?
 - How does Drift differ from Validation or Verification?
 - Can drift be directional, progressive, episodic, or reversible?
-- What is the relationship between drift detection and deciding to update the source Document?
+- Can a historical Document remain valid in its original time while a Drift Document records present divergence?
+- Can planned-but-unrealized change itself create Drift?
+- When does an incomplete Update become Drift rather than simply unfinished work?
 
 ## Resolution path
 
-If this pin is resolved, do not delete its history.
-
-Move it under:
-
-~~~text
-pins/resolved/
-~~~
-
-and preserve:
+If this pin is resolved, preserve:
 
 ~~~text
 hypothesis
 -> evidence
 -> tension
+-> refinement
 -> resolution
 -> normative consequence
 ~~~
@@ -264,6 +323,8 @@ hypothesis
 
 Candidate Document responsibility.
 
-The evidence threshold has been reached. The next step is a dedicated semantic review of Drift itself.
+The evidence threshold has been reached.
 
-Do not move this pin to resolved until a concrete resolution is reached, such as promotion into normative semantics, rejection, absorption, or reframing.
+Realization and Update research materially refined the candidate definition:
+
+> Drift is not change itself. Drift is divergence that remains unreconciled in the documentary representation of reality.
