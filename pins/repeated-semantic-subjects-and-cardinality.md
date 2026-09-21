@@ -79,6 +79,18 @@ This suggests repeated semantic subjects may include not only domain subjects su
 
 However, an Update patch operation references an existing answer rather than necessarily introducing a new domain subject. That difference must be preserved.
 
+Update also adds another cardinality dimension:
+
+~~~text
+1 semantic Update
+    -> N patch operations
+    -> across M Documents
+~~~
+
+The grouping boundary is semantic rather than file-based: multiple answer changes may belong to one Update because together they express one coherent transition.
+
+This should not be confused with technical transactionality.
+
 ## Important distinctions
 
 ~~~text
