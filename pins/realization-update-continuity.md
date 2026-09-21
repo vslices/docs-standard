@@ -67,6 +67,24 @@ Both belong to the same documentary responsibility.
 
 The difference is temporal / intentional state, not Document type.
 
+## Update as answer-level transition knowledge
+
+Update review added a crucial refinement:
+
+~~~text
+Update
+    does not replace whole Documents
+    patches specific answers
+~~~
+
+A single Update may therefore apply N patch operations across M Documents.
+
+The transition knowledge is answer-level rather than file-level.
+
+This is tracked in:
+
+- [Documentary patch semantics](documentary-patch-semantics.md)
+
 ## Update as transition knowledge
 
 Update does not own the target state itself.
@@ -87,7 +105,8 @@ A planned Update may therefore reference:
 
 - source current Realization;
 - target proposed Realization;
-- specific changes required to move between them.
+- specific documentary answers that must change to preserve the transition;
+- patch operations required to move those answers from their current to intended state.
 
 After execution, an Update may preserve:
 
