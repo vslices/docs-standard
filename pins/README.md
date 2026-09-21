@@ -23,6 +23,7 @@ During each Document review:
 - [Repeated semantic subjects and cardinality](repeated-semantic-subjects-and-cardinality.md)
 - [Realization and the separation between requirement and materialization](realization.md)
 - [Realization and Update continuity](realization-update-continuity.md)
+- [Documentary patch semantics](documentary-patch-semantics.md)
 - [Constraint as decision input](constraint-as-decision-input.md)
 - [Documentary Nexus proposals](documentary-nexus-proposals.md)
 
@@ -97,6 +98,16 @@ Research around:
 - current state, proposed state, planned change, executed change, and resulting state;
 - explicit evolution versus unreconciled Drift;
 - how this cycle may participate in Software Project Continuity Paths.
+
+### Documentary patch semantics
+
+Research around:
+
+- Update as answer-level semantic patch rather than whole-Document replacement;
+- N patch operations across M Documents;
+- planned versus observed patches;
+- documentary reversibility;
+- preserving before -> operation -> after without snapshotting entire Documents.
 
 ### Constraint -> Decision
 
