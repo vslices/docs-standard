@@ -64,6 +64,21 @@ A Consistency Document may describe one consistency unit containing N consistenc
 
 This independently reproduces the Domain Vocabulary problem and promotes it from a local modeling concern to a transversal Docs Standard concern.
 
+### Update
+
+Update provides a third witness with a different shape:
+
+~~~text
+one Update
+    -> N patch operations
+        -> each identifies an answer target
+        -> each may expose the same subordinate patch questions
+~~~
+
+This suggests repeated semantic subjects may include not only domain subjects such as terms or consistency rules, but transition subjects such as patch operations.
+
+However, an Update patch operation references an existing answer rather than necessarily introducing a new domain subject. That difference must be preserved.
+
 ## Important distinctions
 
 ~~~text
