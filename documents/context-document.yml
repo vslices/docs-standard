@@ -29,8 +29,6 @@ document:
       - id: situation
         text: ¿En qué situación aparece?
         children:
-          - id: concrete-situation
-            text: ¿Qué situación concreta estamos observando?
           - id: circumstances
             text: ¿Bajo qué circunstancias aparece?
           - id: moment-or-stage
@@ -72,7 +70,7 @@ document:
           - id: artifacts-or-information-sources
             text: ¿Qué artifacts o fuentes de información intervienen?
           - id: relevant-environment
-            text: ¿Qué entorno físico, organizacional o técnico importa?
+            text: ¿Qué condiciones del entorno físico, organizacional o técnico influyen en este contexto?
 
       - id: perspective
         text: ¿Desde qué perspectiva observamos este contexto?
@@ -80,9 +78,9 @@ document:
           - id: observer
             text: ¿Quién está observando o interpretando?
           - id: observable-context
-            text: ¿Qué parte del contexto puede observar?
+            text: ¿Qué parte del contexto es observable desde esta perspectiva?
           - id: unknown-context
-            text: ¿Qué parte puede desconocer?
+            text: ¿Qué parte del contexto puede quedar fuera de esta perspectiva?
           - id: alternative-perspectives
             text: ¿Cómo cambiaría la interpretación desde otra perspectiva?
 
@@ -108,7 +106,7 @@ document:
           - id: prior-decisions
             text: ¿Qué decisiones previas condicionan este contexto?
           - id: irrelevant-background
-            text: ¿Qué antecedentes ya no son relevantes?
+            text: ¿Qué antecedentes podrían parecer relevantes pero ya no condicionan el contexto actual?
 
       - id: knowledge-basis
         text: ¿En qué conocimiento se basa este contexto?
@@ -130,7 +128,7 @@ document:
           - id: assumption-justification
             text: ¿Por qué lo estamos aceptando?
           - id: assumption-confidence
-            text: ¿Qué tan confiable es?
+            text: ¿Qué incertidumbre conserva este supuesto?
           - id: assumption-dependencies
             text: ¿Qué depende de este supuesto?
           - id: assumption-falsification-impact
