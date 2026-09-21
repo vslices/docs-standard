@@ -43,9 +43,13 @@ Nexus(Target)
 ├─ Decision Record
 │  -> What was decided?
 ├─ Realization
-│  -> How is it currently realized?
+│  -> How is it realized?
+│     ├─ current
+│     └─ proposed
+├─ Update?
+│  -> What transition is planned or occurred?
 └─ Drift?
-   -> Where does observed reality diverge from represented knowledge?
+   -> What divergence remains unreconciled?
 ~~~
 
 This constellation is strongly related to the Software Project Continuity Path.
@@ -70,11 +74,17 @@ Decision Record
 Decision Record
     -> explains why a realization direction was selected
 
-Realization
-    -> describes the current concrete mechanism
+Realization (proposed)
+    -> describes the intended concrete target state
+
+Update
+    -> may describe the transition toward that state
+
+Realization (current)
+    -> describes the concrete state that actually exists
 
 Drift
-    -> may compare current reality against one or more of the above
+    -> may capture divergence that remains unreconciled
 ~~~
 
 These are candidate semantic relationships, not a finalized Nexus schema.
@@ -91,7 +101,7 @@ Prescriptive
     -> what conditions and constraints must be considered
 
 Descriptive
-    -> how the target is currently realized
+    -> how the target is or will be concretely realized
 ~~~
 
 Current candidate mapping:
@@ -104,10 +114,13 @@ Constraint
     -> prescriptive
 
 Realization
-    -> descriptive
+    -> descriptive, current or prospective
 
 Decision Record
     -> connective / justificatory
+
+Update
+    -> transitional
 ~~~
 
 Decision Record does not fit cleanly into only one axis because it records the choice that bridges constraints and realization.
@@ -126,6 +139,7 @@ Consistency
 Constraint
 Decision Record
 Realization
+Update?
 Structure
 Drift?
 ~~~
@@ -184,6 +198,21 @@ Continuity Path
 ~~~
 
 The Software Project Continuity Path may traverse or create several Documents inside one or more Nexus artifacts.
+
+A newly observed candidate continuity chain is:
+
+~~~text
+declarative semantics
+-> constraints
+-> decision
+-> proposed realization
+-> update
+-> current realization
+-> verification
+-> unreconciled drift
+~~~
+
+This is not yet a mandatory sequence or workflow.
 
 ## Open questions
 
