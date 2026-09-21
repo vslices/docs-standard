@@ -220,12 +220,32 @@ This should be compared with Domain Vocabulary terms and Consistency rules witho
 - Should planned and observed Updates be separate Documents?
 - How should Update relate to Decision when the patch changes during execution?
 
+## Promoted Update semantics
+
+The current machine-consumable Update definition now promotes a reduced semantic graph around:
+
+~~~text
+What changes?
+├─ what knowledge originates the update
+├─ what makes the changes one semantic update unit
+└─ which Documents and questions are affected
+    ├─ why the question changes
+    ├─ expected answer before
+    └─ expected answer after
+~~~
+
+The YAML intentionally does not introduce a cardinality primitive yet.
+
+Repeated affected Documents and repeated affected questions remain a semantic requirement under research until the common Document model can represent repeated semantic subjects explicitly.
+
+The promoted definition also omits per-instance questions about partial application, completion, and atomicity because those are invariants of the Update type rather than variable knowledge each Update must answer.
+
 ## Current status
 
-Open research pin.
+Open research pin with part of the Update semantics now promoted.
 
 Do not reduce Update semantics to file editing, text replacement, or whole-Document replacement.
 
-The strongest current hypothesis is:
+The strongest current hypothesis remains:
 
-> Update is a reversible semantic patch over documentary answers.
+> Update is an irreducible, reversible semantic patch over documentary answers.
