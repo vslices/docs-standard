@@ -253,6 +253,22 @@ Drift
 
 This makes Drift comparative without turning every change into a defect.
 
+## Update review refinement
+
+Update review clarified that a planned patch can exist without implying Drift.
+
+~~~text
+planned answer changes
+!=
+current divergence
+~~~
+
+A pending Update describes intended transition knowledge.
+
+Drift concerns current represented knowledge that no longer corresponds to observed reality and remains unreconciled.
+
+Because Update operates at answer level, reconciliation may also be answer-level: some answers can be reconciled while others remain divergent.
+
 ## Relationship with Update
 
 Update appears to be one mechanism by which change becomes reconstructible rather than drifting silently.
