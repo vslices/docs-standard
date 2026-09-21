@@ -44,17 +44,47 @@ Update
 
 This means one Update may span several Documents while remaining one coherent change artifact.
 
+## Semantic update unit
+
+Update review clarifies that an Update is not merely a bag of independent edits.
+
+It is a semantic unit of change that may contain N patch operations over M Documents.
+
+This raises an important question:
+
+> What makes several answer-level patches belong to the same Update?
+
+A useful provisional criterion is semantic cohesion rather than file location.
+
+Patches may belong together because they jointly express one transition whose meaning would be incomplete or misleading if arbitrarily split.
+
+This does not yet imply transactional or technical atomicity.
+
+We should distinguish:
+
+~~~text
+semantic update unit
+    = changes that belong together as one meaningful transition
+
+technical atomicity
+    = changes applied all-or-nothing by a mechanism
+~~~
+
+The first belongs to Docs Standard research. The second belongs to Tooling / realization unless semantic requirements later demand it.
+
 ## Reversible patch hypothesis
 
 An Update should preserve enough semantic information to reconstruct:
 
 ~~~text
-before
--> operation
--> after
+expected before state
+-> semantic patch
+-> resulting after state
 ~~~
 
 without requiring a complete snapshot of the affected Documents.
+
+The "before" state is not merely history. It also helps define applicability: if the target answer no longer corresponds to the expected source state, the patch may no longer be safely or meaningfully applicable.
 
 This may make an Update reversible in the documentary sense.
 
@@ -67,21 +97,56 @@ Possible operations include, provisionally:
 
 Do not promote an operation vocabulary yet.
 
+## Applicability and invalidation
+
+Update review distinguishes workflow timing from semantic applicability.
+
+Questions such as "apply at iteration close" or "before publication" are Method / Tooling concerns unless they encode a real semantic precondition.
+
+The semantic concern is:
+
+> Under what source conditions is this patch still applicable?
+
+Potential applicability knowledge includes:
+
+- the answer identity being targeted;
+- the expected answer state before patching;
+- required related answers or semantic subjects;
+- dependencies between patch operations;
+- conditions that make the patch obsolete or conflicting.
+
+This gives a stronger interpretation to the historical "causales de invalidación": invalidation is about the patch no longer matching the knowledge state it was designed to transform.
+
+## Reversibility
+
+Documentary reversibility means preserving enough information to understand and reconstruct the inverse semantic transition.
+
+Open distinctions include:
+
+- reversing the whole semantic Update versus one patch operation;
+- exact restoration versus compensating change;
+- semantic reversibility versus technical rollback;
+- whether reversal should be represented as a new Update rather than history mutation.
+
+The current requirement is semantic reversibility; implementation mechanics remain outside Docs Standard.
+
 ## Planned and observed patches
 
-The review also strengthens the distinction between:
+The review strengthens the distinction between:
 
 ~~~text
-planned patch
-    = what answers are intended to change
+planned Update
+    = answer changes intended to occur
 
-observed patch
-    = what answers actually changed
+observed Update
+    = answer changes known to have occurred
 ~~~
 
-These may be represented by separate Update Documents or by states/relations between Updates.
+Hernán's current working model favors allowing separate Update Documents for these roles rather than requiring one mutable Update lifecycle.
 
-Current evidence does not justify forcing one representation.
+There is no semantic problem with N Update Documents describing M or N transitions over Q Documents.
+
+This remains research rather than a normative cardinality rule.
 
 Hernán explicitly notes that there is no problem having N Update Documents for M or N changes across Q Documents.
 
@@ -145,7 +210,9 @@ This should be compared with Domain Vocabulary terms and Consistency rules witho
 - Can a patch target a repeated semantic subject plus one of its answers?
 - Can one patch operation affect several answers atomically?
 - Can one Update span several Documents?
-- What makes several patch operations belong to the same Update?
+- What makes several patch operations belong to the same semantic Update unit?
+- Which patch operations must remain grouped for the transition to retain its meaning?
+- Can an Update be semantically partial while still valid?
 - What information is required for documentary reversibility?
 - Does reversal create a new Update rather than mutate history?
 - How are conflicts between Updates represented?
