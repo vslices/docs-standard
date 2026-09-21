@@ -34,7 +34,7 @@ document:
           - id: circumstances
             text: ¿Bajo qué circunstancias aparece?
           - id: moment-or-stage
-            text: ¿Existe en un momento o etapa particular?
+            text: ¿En qué momento o etapa aparece?
 
       - id: contextual-importance
         text: ¿Por qué importa entender este contexto?
@@ -84,7 +84,7 @@ document:
           - id: unknown-context
             text: ¿Qué parte puede desconocer?
           - id: alternative-perspectives
-            text: ¿Qué otras perspectivas podrían describirlo de forma distinta?
+            text: ¿Cómo cambiaría la interpretación desde otra perspectiva?
 
       - id: contextual-applicability
         text: ¿En qué condiciones este contexto es aplicable?
