@@ -31,13 +31,13 @@ document:
         text: ¿Qué estructura estamos describiendo?
         children:
           - id: structure-kind
-            text: ¿Qué clase de estructura es?
+            text: ¿Qué tipo de estructura estamos describiendo?
           - id: structure-state
             text: ¿Es una estructura existente, propuesta o esperada?
           - id: structure-source
             text: ¿Está observada, declarada o inferida?
           - id: declared-observed-differences
-            text: ¿Existen diferencias entre la estructura declarada y la observada?
+            text: ¿Qué diferencias existen entre la estructura declarada y la observada?
 
       - id: observation-level
         text: ¿A qué nivel estamos observando la estructura?
@@ -47,7 +47,7 @@ document:
           - id: omitted-detail
             text: ¿Qué detalle estamos omitiendo?
           - id: collapsed-internal-structure
-            text: ¿Qué estructura interna queda colapsada dentro de una parte?
+            text: ¿Qué estructura interna estamos representando como una sola parte?
 
       - id: parts
         text: ¿Qué partes componen esta estructura?
@@ -57,9 +57,9 @@ document:
           - id: part-kind
             text: ¿Es un tipo, instancia, rol o agrupación?
           - id: part-identity
-            text: ¿Tiene identidad propia?
+            text: ¿Cómo se distingue una parte de otra?
           - id: part-multiplicity
-            text: ¿Puede existir más de una?
+            text: ¿Cuántas instancias de esta parte pueden existir?
           - id: part-presence
             text: ¿Es necesaria, opcional o condicional?
 
@@ -71,15 +71,9 @@ document:
           - id: relationship-kind
             text: ¿Qué naturaleza tiene cada relación?
           - id: relationship-direction
-            text: ¿En qué dirección existe?
-          - id: relationship-dependency
-            text: ¿Implica dependencia?
-          - id: relationship-containment
-            text: ¿Implica contención?
-          - id: relationship-sequence
-            text: ¿Implica secuencia?
+            text: ¿Qué dirección tiene la relación?
           - id: independent-existence
-            text: ¿Puede existir cada parte independientemente?
+            text: ¿De qué otras partes depende su existencia?
           - id: relationship-cardinality
             text: ¿Qué cardinalidad tiene la relación?
 
@@ -91,7 +85,7 @@ document:
           - id: groups
             text: ¿Qué partes pertenecen al mismo grupo?
           - id: composition-levels
-            text: ¿Existen varios niveles de composición?
+            text: ¿Qué niveles de composición existen?
           - id: membership-criterion
             text: ¿Qué criterio determina la pertenencia?
 
@@ -99,17 +93,11 @@ document:
         text: ¿Qué forma estructural emerge?
         children:
           - id: hierarchy
-            text: ¿Existe jerarquía?
-          - id: sequence
-            text: ¿Existe secuencia?
-          - id: branching
-            text: ¿Existen ramificaciones?
-          - id: convergence
-            text: ¿Existen convergencias?
+            text: ¿Qué jerarquías existen?
           - id: cycles
-            text: ¿Existen ciclos?
+            text: ¿Qué ciclos existen?
           - id: structural-centers
-            text: ¿Existen puntos estructuralmente centrales?
+            text: ¿Qué puntos son estructuralmente centrales?
 
       - id: ordering
         text: ¿Qué orden existe entre las partes?
@@ -138,7 +126,7 @@ document:
             text: ¿Qué propiedad de la organización buscamos preservar?
 
       - id: structural-function
-        text: ¿Qué función estructural cumple cada parte?
+        text: ¿Qué papel cumple cada parte dentro de la estructura?
         children:
           - id: structural-position
             text: ¿Qué posición ocupa?
@@ -191,7 +179,7 @@ document:
           - id: strong-coupling
             text: ¿Qué partes están fuertemente acopladas?
           - id: circular-dependencies
-            text: ¿Existen dependencias circulares?
+            text: ¿Qué dependencias circulares generan tensión estructural?
           - id: ambiguous-boundaries
             text: ¿Dónde una frontera es ambigua?
           - id: overlapping-parts
