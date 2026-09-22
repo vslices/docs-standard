@@ -230,8 +230,8 @@ What changes?
 ├─ what makes the changes one semantic update unit
 └─ which Documents and questions are affected
     ├─ why the question changes
-    ├─ expected answer before
-    └─ expected answer after
+    ├─ previous answer
+    └─ resulting answer
 ~~~
 
 The YAML intentionally does not introduce a cardinality primitive yet.
