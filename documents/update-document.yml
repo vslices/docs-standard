@@ -27,25 +27,21 @@ document:
       - id: semantic-update-unit
         text: ¿Qué hace que estos cambios formen una misma actualización?
         children:
-          - id: common-transition
-            text: ¿Qué transición común expresan?
-          - id: shared-semantic-objective
-            text: ¿Qué objetivo semántico comparten?
+          - id: shared-semantic-change
+            text: ¿Qué cambio semántico común expresan?
           - id: change-relationships
             text: ¿Qué relación existe entre los cambios?
           - id: change-dependencies
             text: ¿Qué cambios dependen de otros?
           - id: shared-consistency
             text: ¿Qué debe mantenerse consistente entre ellos?
-          - id: split-contradiction
-            text: ¿Qué contradicción aparecería si no se aplicaran en conjunto?
-          - id: split-meaning-loss
-            text: ¿Qué significado se perdería si se separaran?
+          - id: split-semantic-breakage
+            text: ¿Qué se rompería semánticamente si se separaran?
           - id: outside-unit
-            text: ¿Qué cambios realmente no pertenecen a esta unidad?
+            text: ¿Qué cambios no pertenecen a esta unidad?
 
       - id: affected-documents
-        text: ¿Qué Documents son afectados por esta actualización?
+        text: ¿Qué Documents afecta esta actualización?
         children:
           - id: affected-document
             text: ¿Qué Document estamos actualizando?
@@ -59,6 +55,6 @@ document:
                       - id: question-update-reason
                         text: ¿Por qué debe actualizarse esta pregunta?
                       - id: answer-before
-                        text: ¿Qué respuesta debe haber antes?
+                        text: ¿Cuál es la respuesta anterior?
                       - id: answer-after
-                        text: ¿Qué respuesta debe haber ahora?
+                        text: ¿Cuál es la respuesta resultante?
