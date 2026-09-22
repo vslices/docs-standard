@@ -27,6 +27,8 @@ During each Document review:
 - [Documentary patch semantics](documentary-patch-semantics.md)
 - [Constraint as decision input](constraint-as-decision-input.md)
 - [Documentary Nexus proposals](documentary-nexus-proposals.md)
+- [Closed and open question complementarity](closed-and-open-question-complementarity.md)
+- [Relationships between questions outside the parent-child tree](cross-question-relations.md)
 
 ## Resolved pins
 
@@ -137,6 +139,23 @@ Research around:
 - future loss of validity;
 - whether validation owns evaluation of represented knowledge against validity conditions;
 - relationship with Drift and Verification.
+
+### Closed and open question complementarity
+
+Research around:
+
+- closed questions as classification;
+- open questions as semantic discovery;
+- when both forms complement rather than replace each other;
+- possible form-like materialization without weakening semantic depth.
+
+### Cross-question relations
+
+Research around:
+
+- semantic relationships between questions outside direct parent-child refinement;
+- cousin-like dependencies and contextual relationships;
+- preserving tree structure while allowing additional graph edges.
 
 ## Rule of promotion
 
