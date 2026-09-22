@@ -35,25 +35,33 @@ document:
               - id: preferred-form
                 text: ¿Cuál es su forma preferida?
               - id: aliases
-                text: ¿Tiene alias o formas equivalentes?
+                text: ¿Qué alias o formas equivalentes tiene?
               - id: translations
-                text: ¿Tiene traducciones relevantes?
+                text: ¿Qué traducciones relevantes tiene?
               - id: abbreviations
-                text: ¿Tiene abreviaturas o siglas?
+                text: ¿Qué abreviaturas o siglas tiene?
               - id: similar-forms
-                text: ¿Existen formas similares que no significan lo mismo?
+                text: ¿Qué formas similares tienen un significado distinto?
 
           - id: term-meaning
             text: ¿Qué significa este término?
             children:
               - id: essential-meaning
                 text: ¿Cuál es su significado esencial?
-              - id: required-properties
-                text: ¿Qué propiedades debe tener algo para que el término aplique?
-              - id: non-required-properties
-                text: ¿Qué propiedades no son necesarias?
+              - id: associated-properties
+                text: ¿Qué propiedades están asociadas a este término?
+                children:
+                  - id: associated-property
+                    text: ¿Qué propiedad estamos describiendo?
+                    children:
+                      - id: associated-property-name
+                        text: ¿Cuál es el nombre de esta propiedad?
+                      - id: associated-property-definition
+                        text: ¿Qué significa esta propiedad?
+                      - id: associated-property-requirement
+                        text: ¿Qué obligatoriedad tiene esta propiedad para que el término aplique?
               - id: excluded-meaning
-                text: ¿Qué queda explícitamente fuera de su significado?
+                text: ¿Qué significado queda explícitamente excluido?
               - id: representative-example
                 text: ¿Cuál es un ejemplo representativo?
               - id: near-counterexample
@@ -65,16 +73,16 @@ document:
               - id: clear-members
                 text: ¿Qué casos pertenecen claramente al concepto?
               - id: clear-non-members
-                text: ¿Qué casos quedan claramente fuera?
+                text: ¿Qué casos concretos quedan claramente fuera del concepto?
               - id: boundary-cases
                 text: ¿Qué casos están en la frontera?
               - id: classification-conditions
                 text: ¿Qué condiciones cambian su clasificación?
               - id: deceptive-usages
-                text: ¿Qué usos parecen válidos pero no lo son?
+                text: ¿Qué usos del término parecen válidos pero contradicen su significado?
 
           - id: term-applicability
-            text: ¿Dónde aplica este término?
+            text: ¿Dónde es semánticamente válido este término?
             children:
               - id: valid-contexts
                 text: ¿En qué contextos es válido?
@@ -95,11 +103,9 @@ document:
               - id: distinction-relevance
                 text: ¿En qué casos la distinción importa?
               - id: distinction-irrelevance
-                text: ¿En qué casos puede ignorarse?
-              - id: polysemy
-                text: ¿Existe polisemia?
-              - id: contextual-meaning
-                text: ¿Significa algo distinto en otro contexto?
+                text: ¿En qué casos la diferencia entre estos términos no afecta la interpretación?
+              - id: contextual-meanings
+                text: ¿Qué significados distintos puede tener según el contexto?
 
           - id: term-relations
             text: ¿Cómo se relaciona este término con otros?
@@ -118,34 +124,34 @@ document:
                 text: ¿Qué términos son alternativos?
               - id: complementary-terms
                 text: ¿Qué términos son complementarios?
-              - id: relation-kind
-                text: ¿Qué tipo de relación existe?
+              - id: other-relations
+                text: ¿Qué otras relaciones relevantes existen?
 
           - id: term-usage
-            text: ¿Cuándo debemos usar este término?
+            text: ¿Cuándo conviene usar este término?
             children:
               - id: preferred-over
                 text: ¿Cuándo debería preferirse sobre otro?
               - id: avoid-usage
                 text: ¿Cuándo no deberíamos usarlo?
               - id: precision-level
-                text: ¿Qué nivel de precisión exige?
+                text: ¿Qué precisión necesitamos al usar este término?
               - id: intended-interpretation
-                text: ¿Qué interpretación debería producir?
+                text: ¿Qué debería entender alguien cuando usamos este término?
 
           - id: term-origin
             text: ¿De dónde proviene este término?
             children:
-              - id: domain-language
-                text: ¿Es lenguaje observado en el dominio?
-              - id: technical-language
-                text: ¿Es lenguaje técnico?
-              - id: deliberately-introduced
-                text: ¿Fue introducido deliberadamente?
-              - id: external-origin
-                text: ¿Proviene de otra disciplina o sistema?
+              - id: origin-source
+                text: ¿En qué lenguaje, disciplina o sistema se origina?
+              - id: adoption-path
+                text: ¿Cómo llegó a usarse en este contexto?
+              - id: original-meaning
+                text: ¿Qué significado tenía en su origen?
               - id: adapted-meaning
-                text: ¿Su significado fue adaptado?
+                text: ¿Qué significado fue adaptado al incorporarlo aquí?
+              - id: deliberate-introduction
+                text: ¿Qué parte fue introducida deliberadamente?
 
           - id: term-uncertainty
             text: ¿Qué no tenemos claro todavía sobre este término?
@@ -171,7 +177,7 @@ document:
               - id: legacy-meaning-usage
                 text: ¿Dónde sigue apareciendo el significado anterior?
               - id: meaning-compatibility
-                text: ¿Son compatibles ambos significados?
+                text: ¿Qué parte del significado anterior sigue siendo compatible con el actual?
 
       - id: deprecated-terms
         text: ¿Qué términos ya no usamos?
@@ -203,17 +209,17 @@ document:
         text: ¿Qué tensiones semánticas existen en este vocabulario?
         children:
           - id: redundant-terms
-            text: ¿Existen términos redundantes?
+            text: ¿Qué términos son redundantes?
           - id: overlapping-definitions
-            text: ¿Existen definiciones solapadas?
+            text: ¿Qué definiciones se solapan?
           - id: circular-definitions
-            text: ¿Existen definiciones circulares?
+            text: ¿Qué definiciones son circulares?
           - id: incompatible-meanings
-            text: ¿Existen significados incompatibles?
+            text: ¿Qué significados son incompatibles?
           - id: insufficient-definitions
-            text: ¿Existen términos insuficientemente definidos?
+            text: ¿Qué términos están insuficientemente definidos?
           - id: unclear-relations
-            text: ¿Existen relaciones cuya semántica no está clara?
+            text: ¿Qué relaciones tienen una semántica poco clara?
 
       - id: vocabulary-obsolescence
         text: ¿Cuándo deja este vocabulario de representar correctamente el lenguaje compartido?
