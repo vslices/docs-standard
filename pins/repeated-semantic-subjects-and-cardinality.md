@@ -64,6 +64,28 @@ A Consistency Document may describe one consistency unit containing N consistenc
 
 This independently reproduces the Domain Vocabulary problem and promotes it from a local modeling concern to a transversal Docs Standard concern.
 
+### Associated properties in Domain Vocabulary
+
+Domain Vocabulary review added a nested repeated-subject shape:
+
+~~~text
+one term
+    -> N associated properties
+        -> name
+        -> definition
+        -> requirement / obligatoriness
+~~~
+
+This means repeated semantic subjects may be recursive:
+
+~~~text
+Vocabulary
+    -> N terms
+        -> N associated properties per term
+~~~
+
+This strengthens the need to distinguish semantic subject identity from question identity and answer cardinality.
+
 ### Update
 
 Update provides a third witness with a different shape:
