@@ -168,8 +168,52 @@ Open question:
 
 ## Current status
 
-Open transversal research pin.
+Partially promoted transversal research pin.
 
-Evidence from Domain Vocabulary and Consistency is sufficient to promote this from a Document-local concern.
+The earlier hypothesis treated repeated semantic subjects as the likely primitive:
 
-Do not change the machine-consumable YAML model until subjects, repeated questions, and repeated answers are semantically distinguishable.
+~~~text
+question
+    -> N semantic subjects
+        -> repeated subordinate questions
+~~~
+
+Further analysis produced a smaller composable mechanism:
+
+~~~text
+QuestionDefinition
+    -> one | many AnswerInstances
+        -> child QuestionDefinitions scoped to each AnswerInstance
+        -> one | many child AnswerInstances
+        -> ...
+~~~
+
+This recursive answer/question alternation is now sufficient to distinguish the first normative cardinality witnesses without introducing a separate subject primitive.
+
+The machine-consumable Document model therefore now admits optional:
+
+~~~yaml
+cardinality: many
+~~~
+
+with omitted cardinality meaning `one`.
+
+Domain Vocabulary currently promotes `many` for:
+
+- `terms`;
+- `associated-properties`;
+- `confusable-terms`.
+
+This is a partial promotion, not a resolution of the whole pin.
+
+Still open:
+
+- stable identity of AnswerInstances under `many`;
+- whether some AnswerInstances require additional semantic-subject identity;
+- selection/addressing of repeated question occurrences in Tooling;
+- references between repeated AnswerInstances;
+- whether one/many is sufficient or min/max constraints eventually emerge;
+- ordering and uniqueness semantics;
+- broader answer-cardinality witnesses across other Document types.
+
+The original semantic-subject hypothesis remains useful evidence, but it is no longer assumed to be the minimum primitive required for cardinality.
