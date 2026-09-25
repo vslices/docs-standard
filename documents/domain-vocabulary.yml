@@ -28,6 +28,7 @@ document:
     children:
       - id: terms
         text: ¿Qué términos usamos?
+        cardinality: many
         children:
           - id: term-identity
             text: ¿Qué término estamos definiendo?
@@ -50,6 +51,7 @@ document:
                 text: ¿Cuál es su significado esencial?
               - id: associated-properties
                 text: ¿Qué propiedades están asociadas a este término?
+                cardinality: many
                 children:
                   - id: associated-property
                     text: ¿Qué propiedad estamos describiendo?
@@ -96,6 +98,7 @@ document:
             children:
               - id: confusable-terms
                 text: ¿Con qué otros términos puede confundirse?
+                cardinality: many
               - id: apparent-equivalence
                 text: ¿Por qué parecen equivalentes?
               - id: semantic-difference

@@ -27,6 +27,44 @@ to:
 
 A Document does not need to materialize every question defined by its type. Unmaterialized questions are possibilities, not missing work.
 
+## Question cardinality
+
+A question may optionally declare:
+
+~~~yaml
+cardinality: many
+~~~
+
+Cardinality belongs to the question definition and constrains the number of answer instances that one question occurrence may materialize.
+
+The current vocabulary is intentionally minimal:
+
+~~~text
+cardinality omitted
+    -> one
+    -> zero or one materialized AnswerInstance during progressive authoring
+
+cardinality: many
+    -> many
+    -> zero or more materialized AnswerInstances during progressive authoring
+~~~
+
+Children are scoped through an answer instance rather than globally through the question definition:
+
+~~~text
+Question
+├─ Answer A
+│  └─ child Questions for A
+└─ Answer B
+   └─ child Questions for B
+~~~
+
+Each child question may declare its own cardinality independently. This makes cardinality recursively composable.
+
+Cardinality does not imply completeness. Zero materialized answers can remain a valid progressive state until evidence justifies an answer.
+
+The standard does not yet define min/max bounds, ordering, uniqueness, stable AnswerInstance identity, or a separate semantic-subject primitive. Those remain evidence-driven design pressures.
+
 ## Progressive authoring
 
 The current authoring model has these invariants:

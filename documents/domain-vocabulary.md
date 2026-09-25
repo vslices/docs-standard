@@ -1,8 +1,8 @@
 # Domain Vocabulary — preguntas abiertas de modelado
 
-Este documento registra preguntas propias de domain-vocabulary que surgieron al promover su grafo semántico a Docs Standard, pero que todavía no tienen una representación normativa suficientemente entendida en el YAML.
+Este documento registra preguntas propias de domain-vocabulary que surgieron al promover su grafo semántico a Docs Standard.
 
-No reemplaza domain-vocabulary.yml. El YAML sigue siendo la definición consumible por Tooling; este archivo conserva presión de diseño pendiente.
+No reemplaza domain-vocabulary.yml. El YAML sigue siendo la definición consumible por Tooling; este archivo conserva presión de diseño pendiente y el camino de promoción de semánticas que ya obtuvieron representación normativa.
 
 ## Cardinalidad de preguntas por término
 
@@ -43,21 +43,39 @@ question
         -> answers to the same subordinate questions
 ~~~
 
-La naturaleza exacta de ese sujeto repetido todavía está abierta.
+La evidencia posterior permitió reducir esta presión sin promover todavía un concepto separado de "semantic subject".
 
-No se asume todavía que deba llamarse collection, record, entity, item o de otra forma.
+El modelo normativo inicial usa cardinalidad sobre la pregunta:
+
+~~~text
+QuestionDefinition
+    -> one | many AnswerInstances
+        -> child QuestionDefinitions scoped to each AnswerInstance
+~~~
+
+`cardinality: many` está promovido actualmente para:
+
+- `terms`, porque un vocabulario contiene N términos;
+- `associated-properties`, porque un término puede tener N propiedades asociadas;
+- `confusable-terms`, como primer witness de una pregunta relacional con N respuestas.
+
+La ausencia de `cardinality` conserva cardinalidad `one`. La cardinalidad limita cuántas AnswerInstances puede tener una ocurrencia de pregunta; no convierte ausencia de respuesta en incompletitud.
+
+La posibilidad de que ciertas AnswerInstances deban adquirir semántica adicional de "subject" permanece abierta. No se asume todavía que deban llamarse collection, record, entity, item o de otra forma.
 
 ### Preguntas abiertas
 
-- ¿Cómo declara Docs Standard que una pregunta puede introducir N sujetos semánticos?
+- ¿Qué identidad estable necesita cada AnswerInstance cuando la cardinalidad es many?
+- ¿Cuándo una AnswerInstance repetida necesita además ser reconocida como sujeto semántico?
 - ¿Cómo obtiene identidad estable cada término dentro del Document?
-- ¿Las preguntas hijas se materializan por cada término o existe otra forma de asociarlas?
+- ¿Cómo se materializan y seleccionan las preguntas hijas dentro de cada AnswerInstance?
 - ¿Cómo descubre Tooling cuál término está siendo actualizado?
 - ¿Cómo se selecciona una pregunta cuando la misma identidad de pregunta existe para múltiples términos?
 - ¿El selector operativo necesita combinar identidad de sujeto + identidad de pregunta?
 - ¿Cómo se preserva el modelo progresivo de authoring cuando pueden aparecer nuevos términos en cualquier momento?
-- ¿Qué ocurre con preguntas relacionales que pueden tener N respuestas dentro de un mismo término, como «¿Con qué otros términos puede confundirse?»?
-- ¿Necesitamos distinguir cardinalidad de sujetos de cardinalidad de respuestas?
+- ¿Qué otras preguntas relacionales necesitan cardinalidad many además de «¿Con qué otros términos puede confundirse?»?
+- ¿Necesitamos restricciones más precisas que one/many, como min/max, o la evidencia actual no las justifica?
+- ¿Necesitamos distinguir explícitamente subject cardinality de answer cardinality, o AnswerInstance explica suficientemente los witnesses actuales?
 
 ## El término como sujeto semántico
 
