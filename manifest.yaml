@@ -18,7 +18,3 @@ documents:
   - documents/drift-document.yml
   - documents/diagnostic-document.yml
   - documents/validation-document.yml
-
-nexus:
-  - nexus/capability-nexus.yml
-  - nexus/service-consumption-nexus.yml
