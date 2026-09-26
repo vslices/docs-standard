@@ -236,16 +236,16 @@ Do not promote these constellations into mandatory templates.
 
 Use recurring target-oriented groupings as evidence for future Nexus semantics.
 
-## Initial normative promotion
+## Initial executable specification
 
-Two evidence-backed constellations have now been promoted as minimal Nexus definitions:
+Two evidence-backed constellations are now represented as minimal candidate Nexus definitions:
 
 - Capability;
 - Service Consumption.
 
-Promotion is intentionally smaller than the historical compositions.
+The candidate definitions are intentionally smaller than the historical compositions.
 
-Each promoted Nexus currently owns only:
+Each current Nexus definition contains only:
 
 ~~~text
 type
