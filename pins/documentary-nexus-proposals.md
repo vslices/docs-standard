@@ -235,3 +235,25 @@ Open research pin.
 Do not promote these constellations into mandatory templates.
 
 Use recurring target-oriented groupings as evidence for future Nexus semantics.
+
+## Initial normative promotion
+
+Two evidence-backed constellations have now been promoted as minimal Nexus definitions:
+
+- Capability;
+- Service Consumption.
+
+Promotion is intentionally smaller than the historical compositions.
+
+Each promoted Nexus currently owns only:
+
+~~~text
+type
+scopes
+recommended Document perspectives
+human-readable role per recommendation
+~~~
+
+The recommendations remain optional.
+
+The larger software-target constellations, recursive Nexus composition, Nexus-to-Nexus relations, ordering, and other candidate relationships in this pin remain open research.
