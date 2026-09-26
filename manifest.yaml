@@ -7,3 +7,12 @@ documents:
   - documents/domain-vocabulary.yml
   - documents/consistency-document.yml
   - documents/update-document.yml
+  - documents/behavior-document.yml
+  - documents/decision-record.yml
+  - documents/feedback-document.yml
+  - documents/navigation-document.yml
+  - documents/scope-document.yml
+  - documents/viability-document.yml
+  - documents/constraint-document.yml
+  - documents/realization-document.yml
+  - documents/drift-document.yml
