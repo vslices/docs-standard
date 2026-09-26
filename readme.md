@@ -8,28 +8,15 @@ Its purpose is to preserve useful knowledge across domain discovery, documentati
 
 The research and design history under `vslices/docs/es/alive-lab/research/notes/docs-standard/artifacts` is evidence used to develop this standard. It is not the normative source consumed by VSlices Tooling.
 
-This repository owns the current official vocabulary for Documents and Nexus definitions, and will progressively define Continuity Paths in the same machine-consumable form.
+This repository defines the current semantic languages used to describe Documents, Nexus artifacts, and Continuity Paths in machine-consumable form.
 
-VSlices Tooling may install and update a snapshot of this repository in the same spirit that target Rulesets are installed and updated independently from Tooling itself.
+`manifest.yaml` identifies definitions that have been explicitly promoted into the installed standard surface.
 
-## Current standard surface
+A definition may exist in this repository before being registered in the manifest when its language is understood but its concrete vocabulary is still expected to evolve through use.
 
-`manifest.yaml` identifies the machine-consumable definitions that currently belong to the standard.
+VSlices Tooling may install and update a snapshot of this repository independently from Tooling itself.
 
-Current normative families:
-
-- [Documents](documents/README.md)
-- [Nexus](nexus/README.md)
-
-Continuity Paths are the next family to reconstruct and promote. Their current entrypoint is:
-
-- [Continuity Paths](continuity-paths/README.md)
-
-Research pins remain available under:
-
-- [Research pins](pins/README.md)
-
-## How to extend the standard
+## Extension entrypoints
 
 This repository is intended to be understandable by a human or AI entering it without prior conversational context.
 
@@ -43,43 +30,60 @@ Each artifact family owns a README that specifies:
 - how to extend an existing definition conservatively;
 - which concerns remain deliberately unmodeled.
 
-### Create or extend a Document
+### Documents
 
 Read:
 
 - [`documents/README.md`](documents/README.md)
 
-Documents answer documentary questions about a target.
+Documents interrogate knowledge about a target through a documentary responsibility.
 
 Their definitions own root questions, subordinate question graphs, stable question identity, cardinality, admitted scopes, and other promoted Document semantics.
 
-Document definitions should grow through semantic pressure from real cases rather than speculative completeness.
+Current manifest-registered Document definitions live under `documents/*.yml`.
 
-### Create or extend a Nexus
+### Nexus
 
 Read:
 
 - [`nexus/README.md`](nexus/README.md)
 
-Nexus definitions compose existing documentary perspectives around a target.
+Nexus definitions compose perspectives around a target.
 
-Their current language defines Nexus type, admitted target scopes, recommended Document perspectives, and a human-readable explanation of the role each recommendation contributes.
+They may also define optional open composition questions and recommendations for known Document or Nexus perspectives.
 
-Recommendations are optional and do not imply automatic Document creation.
+Recommendations are guidance, not requirements or a whitelist of what a concrete Nexus may associate.
 
-### Create or extend a Continuity Path
+Current candidate Nexus definitions live under `nexus/*.yml`.
+
+They are intentionally not registered in `manifest.yaml` yet; their concrete vocabulary should continue to emerge through use.
+
+### Continuity Paths
 
 Read:
 
 - [`continuity-paths/README.md`](continuity-paths/README.md)
 
-Continuity Paths have not yet completed the same semantic reconstruction.
+Continuity Paths interrogate and navigate continuity.
 
-The entrypoint deliberately explains what is known, what remains historical evidence, and how the future YAML language should be promoted without inventing semantics from old front-matter.
+Their definitions provide:
+
+- a purpose;
+- human-readable recommended traversal guidance;
+- a root continuity question;
+- an arbitrarily deep question graph;
+- semantic connections between continuity points;
+- recommendations for known Documents or Nexus definitions that can help preserve discovered knowledge.
+
+The generated continuity graph is the mandatory semantic surface. Rendering belongs to Tooling.
+
+Current candidate Continuity Path definitions live under `continuity-paths/*.yml`.
+
+They reconstruct the historical Paths conservatively and are not registered in `manifest.yaml` yet.
 
 ## Definition languages
 
-The YAML files in this repository are the current concrete machine-consumable syntax for promoted Docs Standard semantics.
+The YAML files in this repository are concrete machine-consumable syntax for Docs Standard semantics.
 
 Their meaning is not defined only by field names. The corresponding family README is the human- and AI-readable semantic specification for that YAML language.
 
@@ -96,17 +100,38 @@ A future representation may lower these definitions to, or express them through,
 
 That possibility must not make the current YAML syntax or its semantics speculative. Changes should continue to be promoted from demonstrated needs.
 
-## Progressive Documents
+## Shared principle
 
-A Document specializes in one root question. Child questions progressively refine that question.
+The three families currently preserve different geometries:
 
-Creating a Document begins with only its root question and an unanswered placeholder. Once answered, immediate child questions become available. A child is materialized only when it receives a valid answer, and deeper questions become available progressively through the same cascade.
+~~~text
+Document
+    -> depth
 
-The complete question graph of a Document type is a space of possibilities, not a completion checklist. Questions that are not materialized are not missing work.
+Nexus
+    -> composition
+
+Continuity Path
+    -> trajectory
+~~~
+
+Their mechanisms may overlap without collapsing their responsibilities.
+
+For example, Nexus and Continuity Paths can both recommend known documentary structures, but recommendations remain open-world guidance rather than allowed-association lists.
+
+## Research pins
+
+Open transversal research remains under:
+
+- [`pins/README.md`](pins/README.md)
+
+Pins preserve uncertainty and design pressure that should not yet become executable vocabulary.
 
 ## Existing templates
 
-The `templates/` directory predates the machine-consumable standard introduced here. Those files remain useful historical and manual authoring references while their knowledge is evaluated and progressively promoted into normative definitions.
+The `templates/` directory predates the machine-consumable standard introduced here.
+
+Those files remain useful historical and manual authoring references while their knowledge is evaluated and progressively promoted into normative definitions.
 
 They must not be treated as authoritative merely because a template already exists.
 
@@ -114,9 +139,9 @@ They must not be treated as authoritative merely because a template already exis
 
 VSlices Docs Standard owns documentary vocabulary and semantic definition languages.
 
-VSlices Tooling owns the authoring mechanism.
+VSlices Tooling owns the authoring, validation, discovery, persistence, and materialization mechanisms.
 
-The standard may evolve independently through versioned definitions while Tooling remains responsible for loading, validating, discovering, updating, and materializing them.
+The standard may evolve independently through versioned definitions while Tooling remains responsible for realizing supported semantics.
 
 ## License
 
