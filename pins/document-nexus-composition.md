@@ -20,7 +20,7 @@ A Document asks one kind of question about a target.
 
 A Nexus may instead provide the composition surface through which several Documents about that same target are discovered, related, or navigated.
 
-The core distinction is now promoted normatively through `nexus/README.md`: Documents own documentary questions, while Nexus definitions compose recommended Document perspectives around a target kind. Richer composition semantics remain open research.
+The core distinction is now specified through `nexus/README.md`: Documents own documentary questions, while Nexus definitions compose perspectives around a target and may provide open composition questions and recommendations. Concrete Nexus definitions remain intentionally unregistered in the manifest while use continues to shape their vocabulary.
 
 ## Shared representations and partial views
 
@@ -214,11 +214,11 @@ Evidence currently supports treating shared representations, partial views, sema
 Do not introduce Nexus semantics into Document definitions solely to satisfy this hypothesis.
 
 
-## Initial normative promotion
+## Initial executable specification
 
-The minimum Nexus definition language is now promoted under `nexus/`.
+The minimum Nexus definition language is now specified under `nexus/`.
 
-Current normative semantics include:
+The current candidate language includes:
 
 ~~~text
 Nexus type
@@ -229,12 +229,12 @@ Nexus type
 
 Recommendations are optional and do not imply automatic Document creation.
 
-The promoted witnesses are:
+The current candidate witnesses are:
 
 - Capability Nexus;
 - Service Consumption Nexus.
 
-The following questions remain research rather than normative Nexus semantics:
+The following questions remain research rather than part of the current Nexus definition language:
 
 - persisted Nexus-instance composition;
 - Nexus-to-Nexus composition;
