@@ -24,3 +24,8 @@ A pin may be resolved because its hypothesis was:
 Moving a pin here should happen only after its central research question no longer remains open in its original form.
 
 Do not rewrite resolved pins to make the final result appear inevitable.
+
+
+## Resolved pins
+
+- [Repeated semantic subjects and cardinality](repeated-semantic-subjects-and-cardinality.md) — resolved through recursive `one | many` AnswerInstances and scoped child QuestionOccurrences; cardinality does not currently require a separate semantic-subject primitive.
