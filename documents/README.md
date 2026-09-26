@@ -6,6 +6,149 @@ The definitions here are not copies of finished Markdown templates. They describ
 
 Research material under `vslices/docs/es/alive-lab/research/notes/docs-standard/artifacts` is evidence and design history for this standard. It is not the normative source consumed by Tooling.
 
+## YAML shape
+
+The current Document definition language is intentionally small:
+
+~~~yaml
+kind: vslices-document-definition
+version: 0.1
+
+document:
+  type: behavior
+
+  scopes:
+    - capability
+
+  question:
+    id: behavior
+    text: ¿Qué debe ocurrir?
+~~~
+
+Only the fields supported by the Document's demonstrated semantics need to be present.
+
+### `kind`
+
+Identifies the definition family.
+
+For definitions in this directory it must currently be:
+
+~~~yaml
+kind: vslices-document-definition
+~~~
+
+### `version`
+
+Identifies the current Document definition-language version:
+
+~~~yaml
+version: 0.1
+~~~
+
+### `document.type`
+
+Stable identity of the Document type.
+
+Examples include:
+
+~~~text
+context
+structure
+behavior
+consistency
+decision-record
+~~~
+
+Tooling should resolve Document vocabulary through this identity rather than through filenames or rendered headings.
+
+### `document.scopes`
+
+Optional type-owned vocabulary describing target kinds for which the Document type is currently admitted.
+
+Do not add scopes speculatively.
+
+A Document type may omit `scopes` until real use demonstrates that the distinction is useful.
+
+### `document.question`
+
+Defines the root documentary question.
+
+Every question has:
+
+~~~yaml
+id: stable-question-id
+text: Human-readable question
+~~~
+
+Questions may recursively declare `children` with the same shape.
+
+A question may also declare promoted question-specific semantics such as:
+
+~~~yaml
+cardinality: many
+~~~
+
+when the Document model explicitly supports them.
+
+Question text is human-readable vocabulary.
+
+Question `id` is stable semantic identity.
+
+## Creating a new Document definition
+
+Create a new Document type only when a distinct documentary responsibility has enough evidence to deserve its own root question.
+
+Start with the smallest definition that expresses that responsibility:
+
+~~~yaml
+kind: vslices-document-definition
+version: 0.1
+
+document:
+  type: <document-type>
+
+  question:
+    id: <root-question-id>
+    text: <root question>
+~~~
+
+A root-only definition is valid.
+
+Do not invent subordinate questions merely to make the definition look complete.
+
+Before creating a new type, ask:
+
+~~~text
+What single documentary responsibility does this type own?
+What root question expresses that responsibility?
+Would an existing Document type already own this knowledge?
+Is this a new documentary perspective, or merely a child question?
+Does real use provide evidence that this responsibility recurs?
+~~~
+
+If the responsibility is still uncertain, preserve it as research instead of promoting a premature Document type.
+
+### Promotion and `manifest.yaml`
+
+Creating a definition file and registering it in `manifest.yaml` are separate decisions.
+
+~~~text
+definition exists
+    !=
+definition is part of the installed standard surface
+~~~
+
+Register a Document definition in `manifest.yaml` only when it is intended to belong to the current promoted Document vocabulary.
+
+The manifest entry uses the repository path:
+
+~~~yaml
+documents:
+  - documents/behavior-document.yml
+~~~
+
+A definition under research may remain outside the manifest until its responsibility is sufficiently established.
+
 ## Document model
 
 A Document specializes in one root question.
