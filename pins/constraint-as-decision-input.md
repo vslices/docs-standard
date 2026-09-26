@@ -136,3 +136,11 @@ Open research pin.
 Preserve the separation:
 
 > Constraint explains what shapes the choice. Decision Record explains the choice that was made.
+
+## Root-question promotion
+
+The Constraint Document responsibility is now minimally promoted in `documents/` with the root question:
+
+> ¿Qué condiciona la realización?
+
+Only the root responsibility is promoted at this point. Its subordinate question graph remains open research and should continue to be refined from real cases.
