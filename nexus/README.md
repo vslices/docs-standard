@@ -1,28 +1,24 @@
 # Nexus definitions
 
-This directory contains the normative Nexus vocabulary consumed by VSlices Tooling.
+This directory specifies the current YAML language for Nexus definitions.
 
-A Nexus does not answer a new documentary question. It composes existing documentary perspectives around one target.
+A Nexus composes documentary perspectives around one target. It does not replace the Documents or other Nexus artifacts that may participate in a concrete representation.
 
 The current distinction is:
 
 ~~~text
 Document
     -> interrogates one target through one documentary responsibility
-    -> owns questions and answers
 
 Nexus
-    -> composes documentary perspectives around one target
-    -> owns composition and recommendation semantics
+    -> composes perspectives around one target
+    -> may ask open questions that specialize that composition
+
+Continuity Path
+    -> interrogates and navigates a continuity
 ~~~
 
-A Nexus definition is therefore not a template for a monolithic document.
-
-It describes which Document perspectives are useful for a kind of target and explains what each perspective contributes.
-
 ## YAML shape
-
-The current Nexus definition language is intentionally small:
 
 ~~~yaml
 kind: vslices-nexus-definition
@@ -34,267 +30,218 @@ nexus:
   scopes:
     - capability
 
+  questions:
+    - id: perspective
+      text: ¿Qué perspectiva necesita esta composición?
+      default: general
+
   recommendations:
-    - document: scope
-      role: Defines the boundaries of the capability
+    - document: behavior
+      role: Explica qué debe ocurrir al ejercer la capacidad
 ~~~
 
-### `kind`
+Only `kind`, `version`, and `nexus.type` identify the definition language and Nexus type.
 
-Identifies the definition family.
+`scopes`, `questions`, and `recommendations` are optional unless evidence for a particular Nexus definition requires them.
 
-For definitions in this directory it must currently be:
+## `nexus.type`
+
+Stable identity of the Nexus definition.
+
+Tooling should resolve Nexus semantics through this identity rather than through filenames or rendered titles.
+
+## `nexus.scopes`
+
+Declares target kinds for which the Nexus definition is known to be useful.
+
+It is guidance owned by the Nexus type. It is not a claim that every target of that scope requires a Nexus.
+
+## Open questions
+
+A Nexus may declare open questions that help specialize or contextualize the composition.
 
 ~~~yaml
-kind: vslices-nexus-definition
+questions:
+  - id: perspective
+    text: ¿Qué perspectiva necesita esta composición?
 ~~~
 
-### `version`
+Questions are optional. A Nexus does not need a question in order to exist.
 
-Identifies the current definition-language version.
+Unlike Document questions, Nexus questions must not absorb documentary responsibilities already owned by Documents.
 
-The first promoted version is:
+For example, a Capability Nexus should not redefine Behavior by asking `¿Qué debe ocurrir?`.
+
+A Nexus question should instead clarify the composition itself.
+
+### Question identity
+
+Each question has a stable `id` and human-readable `text`.
+
+Question wording may evolve without changing stable identity when its semantic responsibility remains the same.
+
+### Optional default
+
+An open question may provide a default value:
 
 ~~~yaml
-version: 0.1
+questions:
+  - id: perspective
+    text: ¿Qué perspectiva necesita esta composición?
+    default: general
 ~~~
 
-This version belongs to the Nexus definition language, not to a generated Nexus artifact instance.
+The default is an authoring suggestion, not immutable semantics.
 
-### `nexus.type`
+Authors may replace it when the concrete Nexus requires a more specific value.
 
-Stable identity of the Nexus type.
+A default must not be used to turn a Nexus question into hidden Document vocabulary.
 
-Examples currently promoted:
+## Recommendations
+
+A Nexus may recommend known Docs Standard perspectives that are commonly useful in its composition.
+
+~~~yaml
+recommendations:
+  - document: behavior
+    role: Explica el comportamiento esperado de la capacidad
+
+  - nexus: service-consumption
+    role: Organiza la perspectiva de consumo cuando la capacidad se expone como servicio
+~~~
+
+A recommendation entry currently references exactly one known definition family:
 
 ~~~text
-capability
-service-consumption
+document: <document-type>
+or
+nexus: <nexus-type>
 ~~~
 
-Tooling should resolve Nexus semantics through this identity rather than through filenames or visible titles.
+### `role`
 
-### `nexus.scopes`
+`role` is the human-readable explanation of what the recommended perspective contributes to this kind of Nexus.
 
-Declares the target kinds for which this Nexus type is currently admitted.
+It is not artifact identity, scope, persisted relation identity, or content copied into the recommended artifact.
 
-This is type-owned vocabulary.
+## Recommendations are open-world guidance
 
-It does not mean that every target of that kind requires a Nexus.
+Recommendations describe how Docs Standard knows how to support the composition.
 
-A Nexus should only be created when composition adds useful continuity.
-
-### `nexus.recommendations`
-
-Declares Document perspectives that are commonly useful for this Nexus type.
-
-A recommendation is not a requirement.
-
-The presence of a recommendation must not cause Tooling to create the corresponding Document automatically.
-
-A Nexus instance may begin with none, some, or all recommended perspectives depending on the real target.
-
-### `nexus.recommendations[].document`
-
-References a Document type registered in the installed Docs Standard.
-
-Example:
-
-~~~yaml
-document: behavior
-~~~
-
-The Nexus does not copy the Document root question or its question graph.
-
-Tooling resolves that vocabulary through the corresponding Document definition.
-
-This preserves one source of truth:
+They do **not** define the complete set of artifacts, references, representations, or knowledge that may participate in a concrete Nexus instance.
 
 ~~~text
-Document definition
-    -> owns the questions
+recommendations
+    = known guidance
 
-Nexus definition
-    -> references the Document type
+recommendations
+    != allowed associations
+    != completeness requirement
 ~~~
 
-### `nexus.recommendations[].role`
+A concrete Nexus may associate knowledge or representations that are not present in `recommendations`.
 
-Human-readable explanation of what that Document perspective contributes to this kind of Nexus.
+Those concrete associations belong to the representation or instance, not to this definition vocabulary.
 
-Example:
+For that reason the definition language does not include an `artifact`, `other`, or catch-all recommendation kind.
 
-~~~yaml
-- document: behavior
-  role: Explains the expected behavior of the capability
-~~~
+## Recommendations are not requirements
 
-`role` is explanatory vocabulary.
+A recommendation does not imply documentary debt.
 
-It is not Document identity, artifact scope, persisted relation identity, or an instruction to duplicate the role into generated Document content.
+Creating a Nexus must not automatically create every recommended Document or Nexus.
 
-Its purpose is to help humans, AI, and Tooling explain why a recommended perspective may be useful.
+Tooling may offer recommendations as authoring actions, but the author chooses which perspectives are useful for the concrete target.
 
-## Semantic coherence rules
-
-A Nexus definition should satisfy the following rules.
+## Semantic coherence
 
 ### Nexus composes; Documents explain
 
-Do not move knowledge owned by a Document into the Nexus definition.
+Do not duplicate Document questions or content inside a Nexus definition.
 
-Bad:
+### Questions specialize composition
 
-~~~yaml
-- document: behavior
-  question: What must occur?
-  expected: ...
-~~~
+Nexus questions may contextualize composition but must not replace the responsibilities of the artifacts being composed.
 
-The Behavior definition already owns that question.
+### Recommendations point to known standard vocabulary
 
-Prefer:
+A `document` value should resolve to a known Document definition.
 
-~~~yaml
-- document: behavior
-  role: Explains what must occur
-~~~
+A `nexus` value should resolve to a known Nexus definition.
 
-### Recommendations are optional
+The fact that a Nexus definition itself is still experimental or not manifest-registered does not turn its recommendation into a whitelist or requirement.
 
-A recommendation describes useful composition, not documentary debt.
+### Scope presets remain deferred
 
-~~~text
-recommended
-!=
-required
-~~~
+A future recommendation may help preset generated artifact metadata such as Document scope.
 
-Tooling should be able to show recommended perspectives without treating missing Documents as incomplete work.
+That behavior is not part of the current language.
 
-### A Nexus must not create Documents by implication
+Document instance scope still needs an explicit promoted semantic contract before Nexus definitions can prescribe such defaults.
 
-Creating a Nexus does not mean creating every recommended Document.
+### Nexus is distinct from navigation
 
-A user or authoring workflow may later choose a recommendation and create or attach the corresponding Document.
+A Nexus composes perspectives. A Navigation Document explains how to traverse a collection.
 
-That transition belongs to Tooling.
-
-### Recommendations reference promoted Document types
-
-A `document` value should resolve to a Document definition registered by `manifest.yaml`.
-
-Do not encode free-form pseudo-Document types inside Nexus definitions.
-
-If a missing documentary responsibility is discovered, first determine whether it deserves a real Document type.
-
-### The target is shared by the composition
-
-A Nexus exists around one semantic target.
-
-The concrete persistence model for Nexus instances is still intentionally small and should be promoted from real authoring evidence.
-
-In particular, `artifact.target` and `artifact.scope` are not introduced here as required persisted Nexus-instance fields merely because historical artifacts used them.
-
-### Scope presets are not yet normative
-
-Research suggests that a Nexus recommendation may eventually help preset Document-instance metadata such as `scope`.
-
-That is not part of the current Nexus definition language.
-
-Document `artifact.scope` is still deferred in the current persisted artifact model.
-
-Do not introduce recommendation-level scope defaults until Document instance scope has a demonstrated and promoted semantic contract.
-
-### Composition is distinct from navigation
-
-A Nexus explains which documentary perspectives compose around a target.
-
-A Navigation Document explains how a human should traverse a collection or route.
-
-A Nexus may later support suggested reading order, but reading order is not part of the current minimum normative language.
-
-### Composition is distinct from Continuity Paths
+### Nexus is distinct from Continuity Paths
 
 A Nexus composes perspectives around a target.
 
-A Continuity Path is expected to preserve how knowledge connects or evolves across work and perspectives.
+A Continuity Path interrogates and navigates continuity through related points.
 
-Do not encode Continuity Path semantics in Nexus definitions merely because a Nexus participates in such a path.
+A Continuity Path may recommend a Nexus when composition is useful at a point in that trajectory.
 
-## Creating a new Nexus type
+## Creating a new Nexus definition
 
-Prefer the smallest evidence-supported definition.
-
-Start from a real target that repeatedly needs several Document perspectives.
+Start from a real target that repeatedly benefits from several documentary perspectives.
 
 Ask:
 
 ~~~text
-What target kind is being composed?
-Which existing Document perspectives are repeatedly useful?
+What target is being composed?
+Which existing Document or Nexus perspectives repeatedly help?
 What does each perspective contribute?
+Are open composition questions repeatedly needed?
 Would one Document already be sufficient?
 Does the composition reduce fragmentation?
 ~~~
 
-If one Document already preserves enough intent, do not create a Nexus.
+Create the smallest definition that preserves the demonstrated semantics.
 
-If composition is useful, create a new definition with:
+Do not add recommendations or questions for symmetrical completeness.
 
-1. a stable `nexus.type`;
-2. the smallest demonstrated `scopes` set;
-3. only the Document recommendations supported by real evidence;
-4. a human-readable `role` for each recommendation;
-5. registration in `manifest.yaml`.
+Definitions do not need to be registered in `manifest.yaml` merely because they are being explored. Registration is a separate promotion decision.
 
-Do not add recommendations merely to make the Nexus look complete.
+## Extending an existing Nexus definition
 
-## Extending an existing Nexus type
-
-Extend a Nexus when real use shows that the current composition repeatedly omits a useful documentary perspective.
+Extend from real use.
 
 Useful evidence includes:
 
-- authors repeatedly create the same additional Document type around this Nexus target;
-- readers repeatedly need the same missing perspective to understand the target;
-- the same Document type consistently plays a recognizable role in several instances;
-- omitting the perspective causes fragmentation or forces another Document to absorb a foreign responsibility.
+- the same missing perspective repeatedly appears in concrete Nexus instances;
+- the same composition question repeatedly needs to be answered;
+- readers repeatedly need the same perspective to understand the target;
+- another artifact is absorbing knowledge only because the Nexus cannot currently orient the composition.
 
-Before adding a recommendation, ask:
-
-~~~text
-Does this Document type already exist?
-Does it answer a distinct documentary responsibility?
-Is it useful specifically in this Nexus composition?
-Can its role be explained without duplicating its content?
-Is the pattern repeated enough to promote?
-~~~
-
-When uncertain, keep the observation in research rather than promoting the recommendation.
+Before promoting an addition, ask whether it changes the Nexus vocabulary or merely belongs to one concrete representation.
 
 ## Conservative extension loop
 
 ~~~text
-use a Nexus in a real case
--> compose the Documents that are actually needed
--> observe the first recurring missing perspective
--> verify that an existing Document owns that perspective
--> describe why it contributes to this Nexus type
--> test the recommendation in another real case
--> promote it only when the pattern remains useful
+use the Nexus in a real case
+-> observe a recurring composition gap
+-> identify whether it is an open question or a known perspective
+-> verify that the responsibility belongs to Nexus
+-> test it in another case
+-> promote only the smallest useful addition
 -> use the Nexus again
 ~~~
 
-The objective is not to define a universal matrix of Documents by target type.
-
-The objective is to preserve useful, evidence-backed composition.
-
-## Current promoted Nexus types
+## Current candidate definitions
 
 - [Capability Nexus](capability-nexus.yml)
 - [Service Consumption Nexus](service-consumption-nexus.yml)
 
-These are initial executable witnesses.
+They are evidence-backed candidate definitions, but are intentionally not registered in `manifest.yaml` yet.
 
-They should be extended from real authoring evidence rather than from the larger historical compositions in `vslices/docs`.
+Their content should evolve from use.
