@@ -374,3 +374,11 @@ The evidence threshold has been reached.
 Realization and Update research materially refined the candidate definition:
 
 > Drift is not change itself. Drift is divergence that remains unreconciled in the documentary representation of reality.
+
+## Root-question promotion
+
+The Drift Document responsibility is now minimally promoted in `documents/` with the root question:
+
+> ¿Qué divergencia sigue sin reconciliarse?
+
+Only the root responsibility is promoted at this point. Its subordinate question graph remains open research and should continue to be refined from real cases.
