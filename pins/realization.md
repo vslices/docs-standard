@@ -394,3 +394,11 @@ Preserve:
 > what constrains the option space second;
 > what was chosen third;
 > how it is or will be realized fourth.
+
+## Root-question promotion
+
+The Realization Document responsibility is now minimally promoted in `documents/` with the root question:
+
+> ¿Cómo se realiza?
+
+Only the root responsibility is promoted at this point. Its subordinate question graph remains open research and should continue to be refined from real cases.
