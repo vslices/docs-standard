@@ -20,7 +20,6 @@ During each Document review:
 - [Documentary Nexus, shared representations, and semantic granularity](document-nexus-composition.md)
 - [Diagnostic tension and fragility](diagnostic-tension-and-fragility.md)
 - [Drift](drift.md)
-- [Repeated semantic subjects and cardinality](repeated-semantic-subjects-and-cardinality.md)
 - [Realization and the separation between requirement and materialization](realization.md)
 - [Realization and Update continuity](realization-update-continuity.md)
 - [Validation and representativeness boundaries](validation.md)
@@ -37,6 +36,10 @@ Resolved research is preserved under:
 - [resolved/](resolved/)
 
 A resolved pin should not disappear. It should preserve the path from hypothesis and evidence to the eventual normative consequence, rejection, absorption, or reframing.
+
+Recently resolved:
+
+- [Repeated semantic subjects and cardinality](resolved/repeated-semantic-subjects-and-cardinality.md) — recursive `one | many` AnswerInstances plus scoped child QuestionOccurrences are sufficient for the current cardinality witnesses; a separate semantic-subject primitive is not required by cardinality itself.
 
 ## Current working distinctions
 
@@ -72,16 +75,6 @@ Research around:
 - obsolescence;
 - unreconciled divergence between represented knowledge and observed reality;
 - distinction between explicit evolution and silent documentary divergence.
-
-### Repeated semantic subjects / cardinality
-
-Research around:
-
-- one question introducing N semantic subjects;
-- stable identity for those subjects;
-- repeated subordinate questions per subject;
-- distinction between subject cardinality and answer cardinality;
-- progressive authoring over repeated semantic subjects.
 
 ### Realization
 
