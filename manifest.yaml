@@ -16,3 +16,5 @@ documents:
   - documents/constraint-document.yml
   - documents/realization-document.yml
   - documents/drift-document.yml
+  - documents/diagnostic-document.yml
+  - documents/validation-document.yml
