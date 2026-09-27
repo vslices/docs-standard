@@ -58,6 +58,24 @@ Current candidate Nexus definitions live under `nexus/*.yml`.
 
 They are intentionally not registered in `manifest.yaml` yet; their concrete vocabulary should continue to emerge through use.
 
+### Diagrams
+
+Read:
+
+- [`diagrams/README.md`](diagrams/README.md)
+- [`diagrams/action-flow.md`](diagrams/action-flow.md)
+
+Diagrams are currently a candidate family.
+
+They show documentary knowledge and realization without replacing the artifacts that explain, compose, connect, support, or organize that knowledge.
+
+The first candidate notation is **Action Flow**, with two complementary projections:
+
+- Abstract Action Flow;
+- Systematized Action Flow.
+
+They are intentionally not registered in `manifest.yaml` yet.
+
 ### Continuity Paths
 
 Read:
