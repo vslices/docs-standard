@@ -4,6 +4,33 @@ This directory specifies the current YAML language for Nexus definitions.
 
 A Nexus composes documentary perspectives around one target. It does not replace the Documents or other Nexus artifacts that may participate in a concrete representation.
 
+## Genealogy and relation to Semantic Pressure
+
+Nexus was deliberately shaped through **porquenuation** when understanding a target required asking not only what was true about it, but which distinct perspectives had to remain related in order for the target to be understood without collapsing those responsibilities.
+
+A useful reconstruction is:
+
+```text
+target cannot be understood from one documentary responsibility
+    -> porquenuation / Semantic Pressure
+    -> distinct necessary perspectives become visible
+    -> their relationship is itself materially important
+    -> need to preserve the composition
+    -> Nexus
+```
+
+This does not make Semantic Pressure part of Nexus semantics or Method the owner of Nexus.
+
+```text
+Semantic Pressure / porquenuation
+    -> may discover a composition that matters
+
+Docs Standard
+    -> stabilizes that composition as Nexus when it needs continuity
+```
+
+A Nexus can also exist or evolve without an explicit Semantic Pressure session. The genealogy explains how the responsibility was discovered; it is not a mandatory construction procedure.
+
 The current distinction is:
 
 ~~~text
@@ -207,6 +234,8 @@ Does the composition reduce fragmentation?
 ~~~
 
 Create the smallest definition that preserves the demonstrated semantics.
+
+When a real target remains unclear, semantic interrogation may reveal that the missing knowledge is not another answer inside one Document but a composition of independently owned perspectives. That is evidence for considering Nexus.
 
 Do not add recommendations or questions for symmetrical completeness.
 
