@@ -6,6 +6,36 @@ The definitions here are not copies of finished Markdown templates. They describ
 
 Research material under `vslices/docs/es/alive-lab/research/notes/docs-standard/artifacts` is evidence and design history for this standard. It is not the normative source consumed by Tooling.
 
+## Genealogy and relation to Semantic Pressure
+
+A Document can emerge when **Semantic Pressure** is applied to an explanatory question and the resulting interrogation reveals a recognizable unit of knowledge that needs to persist.
+
+A useful historical reconstruction is:
+
+```text
+question about a topic
+    -> porquenuation / Semantic Pressure
+    -> map of knowledge needed to answer it
+    -> need to preserve that explanatory continuity
+    -> Document
+```
+
+This relationship helps explain why a Document owns a primary question. The question is not merely editorial metadata: it can act as the focus of the explanatory continuity around which semantic pressure was exercised.
+
+This is a generative relationship, not a construction requirement:
+
+```text
+a Document may emerge through Semantic Pressure
+!=
+every Document must be produced through Semantic Pressure
+
+Semantic Pressure may discover useful understanding
+!=
+that understanding must become a Document
+```
+
+Docs Standard owns the stabilized documentary responsibility. Method owns Semantic Pressure.
+
 ## YAML shape
 
 The current Document definition language is intentionally small:
@@ -198,7 +228,9 @@ The existence of a possible question is not sufficient evidence for promoting it
 
 A child question deserves to exist when it adds useful semantic pressure to its parent.
 
-A useful child question should make at least one relevant distinction more explicit without becoming an independent documentary responsibility.
+A useful child question should make at least one distinction more explicit when that distinction is material to the explanatory continuity the Document is trying to preserve, without becoming an independent documentary responsibility.
+
+The next useful question need not come from a predetermined checklist. Repeated use may show that an answer exposes another distinction that deserves explicit interrogation. When such a question proves recurrently useful, Docs Standard may stabilize it so future resolutions do not need to rediscover it from scratch.
 
 Before adding a question, ask:
 
