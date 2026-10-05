@@ -130,6 +130,41 @@ A future representation may lower these definitions to, or express them through,
 
 That possibility must not make the current YAML syntax or its semantics speculative. Changes should continue to be promoted from demonstrated needs.
 
+## Discovery and stabilization
+
+One historically important path into Docs Standard is **Semantic Pressure / porquenuation**.
+
+Method may interrogate a topic, continuity, or composition until distinctions material to the target continuity become visible. When those distinctions need to persist, transfer, be reviewed, be related, or be resumed later, Docs Standard can stabilize them through the appropriate documentary responsibility.
+
+```text
+Semantic Pressure / porquenuation
+    -> discovers semantic distinctions needed for continuity
+    -> some distinctions need persistence
+    -> Docs Standard stabilizes them
+
+Docs Standard artifacts
+    -> preserve and orient those distinctions
+    -> may become context for later Semantic Pressure
+```
+
+This relation is bidirectional and generative. It is not a claim that every Docs Standard artifact must originate through Semantic Pressure.
+
+The current historical clarification is especially relevant to:
+
+- **Document** — explanatory continuity around a documentary responsibility;
+- **Continuity Path** — continuity as a navigable trajectory;
+- **Nexus** — continuity of composition among distinct perspectives.
+
+Ownership remains separate:
+
+```text
+Semantic Pressure
+    -> Method
+
+Document / Continuity Path / Nexus
+    -> Docs Standard
+```
+
 ## Shared principle
 
 The artifact families currently preserve different responsibilities:
