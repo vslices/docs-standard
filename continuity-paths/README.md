@@ -6,6 +6,37 @@ A Continuity Path is a navigation-oriented interrogation of continuity.
 
 It defines a question graph that helps an author discover how one point of knowledge relates to another and recommends known Docs Standard perspectives that can preserve the discovered continuity.
 
+## Genealogy and relation to Semantic Pressure
+
+Continuity Paths were shaped deliberately through **porquenuation**: iterative semantic interrogation performed in service of a continuity that must remain recognizable.
+
+A Continuity Path can emerge when Semantic Pressure applied to an explicit continuity need reveals the trajectory, pieces, relations, ruptures, and continuation conditions that matter:
+
+```text
+continuity need
+    -> porquenuation / Semantic Pressure
+    -> target continuity becomes clearer
+    -> participants, roles, relations, ruptures, and conditions emerge
+    -> need to preserve and orient that trajectory
+    -> Continuity Path
+```
+
+This helps explain why concepts such as root continuity question, target, participants, connections, and recommended perspectives belong naturally to the Path vocabulary: they are kinds of knowledge that may become necessary while trying to continue a concrete continuity.
+
+The relationship is generative, not mandatory:
+
+```text
+a Continuity Path may emerge through Semantic Pressure
+!=
+every Path must be constructed through an explicit Semantic Pressure session
+
+a continuity may be clear enough in context
+!=
+it always needs a formal Continuity Path artifact
+```
+
+Docs Standard owns Continuity Paths. Method owns Semantic Pressure.
+
 The current distinction is:
 
 ~~~text
@@ -271,6 +302,10 @@ What navigation guidance genuinely helps without becoming a rigid workflow?
 ~~~
 
 Create the smallest question graph supported by evidence.
+
+When extending the interrogation, let the previous answer help reveal what continuity distinction needs to be asked next. Do not traverse questions merely because they are possible.
+
+A question is material when resolving it may change how the target continuity is understood or continued.
 
 Do not reproduce an entire historical template merely because it exists.
 
