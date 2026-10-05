@@ -42,6 +42,18 @@ Their definitions own root questions, subordinate question graphs, stable questi
 
 Current manifest-registered Document definitions live under `documents/*.yml`.
 
+### Support Notes
+
+Read:
+
+- [`support-notes/README.md`](support-notes/README.md)
+
+Support Notes preserve auxiliary knowledge that should not be lost yet without forcing it prematurely into a Document responsibility.
+
+They are intentionally small and may preserve incomplete or provisional knowledge. The currently promoted types are `draft`, `result`, `validation`, and `risk`.
+
+Current manifest-registered Support Note definitions live under `support-notes/*.yml`.
+
 ### Nexus
 
 Read:
@@ -120,11 +132,14 @@ That possibility must not make the current YAML syntax or its semantics speculat
 
 ## Shared principle
 
-The three families currently preserve different geometries:
+The artifact families currently preserve different responsibilities:
 
 ~~~text
 Document
-    -> depth
+    -> depth through a primary documentary responsibility
+
+Support Note
+    -> lightweight auxiliary knowledge
 
 Nexus
     -> composition
