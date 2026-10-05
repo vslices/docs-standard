@@ -118,6 +118,8 @@ Question id is stable semantic identity.
 
 A Support Note question is not a primary documentary question. If the useful knowledge being preserved grows until it answers a primary documentary responsibility, that is pressure to move or promote the knowledge into the corresponding Document rather than expanding Support Note until it behaves like one.
 
+Support Notes are intentionally small. A Support Note type should normally expose no more than two semantic questions. If useful representation repeatedly requires more depth, first consider whether the knowledge should be promoted to a Document, separated into another Support Note, or connected through an artifact relationship.
+
 ## Current evidenced types
 
 ### draft
@@ -163,6 +165,8 @@ A Result Support Note preserves occurrence or observation.
 
 It must not silently turn the observation into a judgment about correctness, institutional intent or target behavior.
 
+A Result often supplies the evidence interpreted by a related Validation Support Note. This pairing is common but not mandatory: a Result may remain useful without a Validation, and a Validation may reference a result preserved elsewhere when that relationship is explicit.
+
 ### validation
 
 ~~~text
@@ -191,6 +195,8 @@ criterion
 The criterion must retain its authority and epistemic status.
 
 Validation does not transform a provisional criterion into institutional truth merely by using it.
+
+A Validation commonly follows or accompanies a Result Support Note. Keep the two responsibilities separate even when they are authored together: Result preserves what was obtained; Validation preserves what that result means against a criterion. Their association belongs to the concrete artifact relationship, not to a requirement that every Result or Validation must have a paired note.
 
 ### risk
 
@@ -221,7 +227,21 @@ when those parts are known.
 
 A missing verification is not automatically a risk. The note should state the failure mode that makes the uncertainty materially relevant.
 
-## Relationship between Result and Validation
+## Result and Validation usually travel together
+
+Result and Validation are independent Support Note responsibilities with a strong practical affinity.
+
+They frequently form this pair:
+
+~~~text
+Result
+    -> preserves the obtained evidence
+
+Validation
+    -> interprets that result against a criterion
+~~~
+
+This is a common composition pattern, not a cardinality rule or mandatory lifecycle. Do not require every Result to have a Validation, and do not require a Validation to duplicate its Result when the evidence is already preserved and explicitly related.
 
 The distinction between Result and Validation is deliberate.
 
