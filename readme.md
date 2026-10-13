@@ -12,7 +12,7 @@ manifest kind and schema version:
 ```yaml
 kind: vslices-docs-standard
 version: 0.1
-name: vslices-standard
+name: vslices
 ```
 
 The name is the default installation identity. A consumer can select a different
