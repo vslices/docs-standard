@@ -1,5 +1,6 @@
 kind: vslices-docs-standard
 version: 0.1
+name: vslices-standard
 
 documents:
   - documents/context-document.yml
@@ -24,3 +25,22 @@ support-notes:
   - support-notes/result.yml
   - support-notes/validation.yml
   - support-notes/risk.yml
+
+nexus:
+  - nexus/capability-nexus.yml
+  - nexus/service-consumption-nexus.yml
+
+continuity-paths:
+  - continuity-paths/business-driver.yml
+  - continuity-paths/business-scenario.yml
+  - continuity-paths/client-product.yml
+  - continuity-paths/consumable-service.yml
+  - continuity-paths/domain-context.yml
+  - continuity-paths/evolution.yml
+  - continuity-paths/impact.yml
+  - continuity-paths/knowledge-handoff.yml
+  - continuity-paths/ownership.yml
+  - continuity-paths/software-initiative.yml
+  - continuity-paths/software-project.yml
+  - continuity-paths/traceability.yml
+  - continuity-paths/viability.yml
