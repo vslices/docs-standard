@@ -266,11 +266,9 @@ use the Nexus in a real case
 -> use the Nexus again
 ~~~
 
-## Current candidate definitions
+## Currently registered definitions
 
 - [Capability Nexus](capability-nexus.yml)
 - [Service Consumption Nexus](service-consumption-nexus.yml)
 
-They are evidence-backed candidate definitions, but are intentionally not registered in `manifest.yaml` yet.
-
-Their content should evolve from use.
+These evidence-backed definitions are now listed in `manifest.yaml`. Registration makes them available as admitted vocabulary; it does not freeze their evolution or convert recommendations into requirements.

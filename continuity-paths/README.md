@@ -363,11 +363,11 @@ If it asks:
     -> likely Continuity Path
 ~~~
 
-## Current candidate definitions
+## Currently registered definitions
 
 This directory contains minimal reconstructions of the historical Continuity Paths from `vslices/docs`.
 
-They intentionally preserve only:
+The current manifest registers these definitions after review. They intentionally preserve only:
 
 - purpose;
 - recommended traversal;

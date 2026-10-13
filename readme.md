@@ -4,6 +4,33 @@ VSlices Docs Standard is the normative, versioned source for VSlices documentati
 
 Its purpose is to preserve useful knowledge across domain discovery, documentation, architecture, implementation, and system evolution without turning documentation into mandatory ceremony.
 
+## Standard identity
+
+Every new Docs Standard manifest declares a stable `name` in addition to the
+manifest kind and schema version:
+
+```yaml
+kind: vslices-docs-standard
+version: 0.1
+name: vslices-standard
+```
+
+The name is the default installation identity. A consumer can select a different
+**installation name** without rewriting or changing this source declaration;
+that alias and source provenance are managed by VSlices Tooling. Name values
+are ASCII identifiers beginning with a letter and continuing with letters,
+digits, hyphens, or underscores (with storage-reserved names excluded).
+
+A locally authored Docs Standard may start with no promoted definitions:
+`documents: []`, `support-notes: []`, `nexus: []`,
+`continuity-paths: []`. It becomes useful by admitting definitions through
+the individual family contracts, not by manufacturing placeholder questions.
+Old manifests without `name` are legacy input only, not a pattern for new standards.
+
+The manifest controls which definitions are *promoted/admitted* to default
+consumer discovery. A file present outside the manifest remains a candidate
+and is not promoted by mere physical existence.
+
 ## Authority
 
 The research and design history under `vslices/docs/es/alive-lab/research/notes/docs-standard/artifacts` is evidence used to develop this standard. It is not the normative source consumed by VSlices Tooling.
@@ -66,9 +93,7 @@ They may also define optional open composition questions and recommendations for
 
 Recommendations are guidance, not requirements or a whitelist of what a concrete Nexus may associate.
 
-Current candidate Nexus definitions live under `nexus/*.yml`.
-
-They are intentionally not registered in `manifest.yaml` yet; their concrete vocabulary should continue to emerge through use.
+The currently registered Nexus definitions live under `nexus/*.yml`; their open-world recommendations remain optional guidance. Further candidates need their own promotion decision.
 
 ### Diagrams
 
@@ -107,9 +132,7 @@ Their definitions provide:
 
 The generated continuity graph is the mandatory semantic surface. Rendering belongs to Tooling.
 
-Current candidate Continuity Path definitions live under `continuity-paths/*.yml`.
-
-They reconstruct the historical Paths conservatively and are not registered in `manifest.yaml` yet.
+The currently registered Continuity Path definitions live under `continuity-paths/*.yml`. They reconstruct historical paths conservatively; registration does not make every possible traversal mandatory.
 
 ## Definition languages
 
