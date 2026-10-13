@@ -66,9 +66,7 @@ They may also define optional open composition questions and recommendations for
 
 Recommendations are guidance, not requirements or a whitelist of what a concrete Nexus may associate.
 
-Current candidate Nexus definitions live under `nexus/*.yml`.
-
-They are intentionally not registered in `manifest.yaml` yet; their concrete vocabulary should continue to emerge through use.
+The currently registered Nexus definitions live under `nexus/*.yml`; their open-world recommendations remain optional guidance. Further candidates need their own promotion decision.
 
 ### Diagrams
 
@@ -107,9 +105,7 @@ Their definitions provide:
 
 The generated continuity graph is the mandatory semantic surface. Rendering belongs to Tooling.
 
-Current candidate Continuity Path definitions live under `continuity-paths/*.yml`.
-
-They reconstruct the historical Paths conservatively and are not registered in `manifest.yaml` yet.
+The currently registered Continuity Path definitions live under `continuity-paths/*.yml`. They reconstruct historical paths conservatively; registration does not make every possible traversal mandatory.
 
 ## Definition languages
 
